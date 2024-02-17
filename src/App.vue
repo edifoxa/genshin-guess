@@ -1,30 +1,71 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div class="bg">
+    <router-link to="/" class="logo">
+      <img src="./assets/logo.png" alt="logo, homepage">
+    </router-link>
+    <router-view/>
+    <footer class="text">
+      Genshin Guess - 2024
+    </footer>
+  </div>
 </template>
+
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
 }
 
-nav {
-  padding: 30px;
+html, body {
+  height: 100%;
+  margin: 0;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.bg {
+  height: 100vh;
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("./assets/background.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:cover;
+  overflow-x: hidden;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+.logo img {
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
+
+.text {
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+h2 {
+  color: #F5E8AF;
+}
+
+h3 {
+  color: #B29E99;
+}
+
+a {
+  all: unset;
+  cursor: pointer;
+}
+
+footer {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #7D796A;
+}
+
 </style>

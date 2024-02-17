@@ -1,19 +1,37 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Home from '../views/Home.vue'
+import Classic from '../views/GameModes/Classic.vue'
+import Quote from '../views/GameModes/Quote.vue'
+import Splash from '../views/GameModes/Splash.vue'
+import NotExist from '../views/NotExist.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'Home',
+    component: Home
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/classic',
+    name: 'Classic',
+    component: Classic
+  },
+  {
+    path: '/quote',
+    name: 'Quote',
+    component: Quote
+  },
+  {
+    path: '/splash',
+    name: 'Splash',
+    component: Splash
+  },
+
+  // catchall 404 Not Found
+  {
+    path: '/:catchAll(.*)',
+    name: 'NotExist',
+    component: NotExist
   }
 ]
 
