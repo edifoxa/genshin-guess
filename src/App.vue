@@ -1,15 +1,16 @@
 <template>
   <div class="bg">
-    <router-link to="/" class="logo">
+    <div class="main">
+      <router-link to="/" class="logo">
       <img src="./assets/logo.png" alt="logo, homepage">
     </router-link>
     <router-view/>
+    </div>
     <footer class="text">
       Genshin Guess - 2024
     </footer>
   </div>
 </template>
-
 
 <style>
 #app {
@@ -21,6 +22,11 @@
 html, body {
   height: 100%;
   margin: 0;
+}
+
+.main {
+  height: max-content;
+  min-height: 90vh;
 }
 
 .bg {
@@ -51,6 +57,7 @@ html, body {
 
 h2 {
   color: #F5E8AF;
+  font-size: 1.5em;
 }
 
 h3 {
@@ -63,9 +70,26 @@ a {
 }
 
 footer {
-  margin-top: 30px;
+  margin-top: 50px;
   margin-bottom: 10px;
   color: #7D796A;
 }
 
+.container {
+  margin: 10px;
+  width: 30%;
+  height: auto;
+  background-color: #0D0F26;
+  border: solid 5px #59403A;
+  border-radius: 20px;
+  text-decoration: none;
+  padding: 0.7em 0.7em;
+  }
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 </style>
