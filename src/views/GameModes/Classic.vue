@@ -1,14 +1,16 @@
 <template>
     <div class="home">
         <div class="container"><GameIntroduction :intro="'Guess today\'s Genshin Impact character!'"/></div>
+        <InputCharacter/>
     </div>
 </template>
 
 <script>
 import GameIntroduction from '@/components/GameIntroduction.vue';
+import InputCharacter from '@/components/InputCharacter.vue';
 
 export default {
-    components: { GameIntroduction }
+    components: { GameIntroduction, InputCharacter }
 }
 </script>
 
