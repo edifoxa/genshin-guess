@@ -7,7 +7,7 @@
         label="name"
         >
             <template #option="option">
-            <span><img :src="option.image" /><div class="option-name">{{ option.name }}</div></span>
+            <span><img :src="require('../assets/characters/' + option.img)" /><div class="option-name">{{ option.name }}</div></span>
             </template>
             
         </v-select>
@@ -19,33 +19,15 @@
 export default {
     data() {
         return {
-            characters: [
-                {
-                    name: "Kaeya",
-                    image: require("../assets/characters/Kaeya.png"),
-                },
-                { 
-                    name: "Diluc",
-                    image: require("../assets/characters/Diluc.png"),
-                },
-                { 
-                    name: "Alhaitham",
-                    image: require("../assets/characters/Alhaitham.png"),
-                },
-                { 
-                    name: "Kaveh", 
-                    image: require("../assets/characters/Kaveh.png"),
-                },
-                { 
-                    name: "Kaedehara Kazuha",
-                    image: require("../assets/characters/Kazuha.png"),
-                },
-                { 
-                    name: "Bennett", 
-                    image: require("../assets/characters/Bennett.png"),
-                }
-            ]
+            characters: []
         }
+    },
+    mounted() {
+        fetch('http://localhost:3000/characters')
+            .then(res => res.json())
+            .then(data => {
+                this.characters = data
+            })
     },
 }
 </script>
@@ -69,9 +51,9 @@ export default {
     text-decoration: none;
     padding: 0.7em 0.7em;
     font-variant: Georgia;
-    font-style: italic;
 }
 
+.new-styles .vs__search,
 .new-styles .vs__dropdown-menu {
     border: none;
     color: #F5E8AF;
@@ -80,7 +62,6 @@ export default {
 }
 
 .new-styles .vs__dropdown-toggle,
-.new-styles .vs__search,
 .new-styles .vs__search::placeholder {
     border: none;
     color: #B29E99;
@@ -108,8 +89,8 @@ span img {
 }
 
 .submit img {
-    height: 4.2em;
-    width: 4em;
+    height: 5em;
+    width: 5em;
 }
 
 ::-webkit-scrollbar {
