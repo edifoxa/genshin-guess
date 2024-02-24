@@ -3,7 +3,6 @@
     <div class="main">
       <router-link to="/" class="logo">
         <img src="./assets/logo.png" alt="logo, homepage">
-        
       </router-link>
       <router-view/>
     </div>

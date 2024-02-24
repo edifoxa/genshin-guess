@@ -7,7 +7,9 @@
         label="name"
         >
             <template #option="option">
-            <span><img :src="require('../assets/characters/' + option.img)" /><div class="option-name">{{ option.name }}</div></span>
+            <span><img :src="require('../assets/characters/' + option.img)" />
+                <div class="option-name">{{ option.name }}</div>
+            </span>
             </template>
             
         </v-select>
@@ -17,18 +19,7 @@
 
 <script>
 export default {
-    data() {
-        return {
-            characters: []
-        }
-    },
-    mounted() {
-        fetch('http://localhost:3000/characters')
-            .then(res => res.json())
-            .then(data => {
-                this.characters = data
-            })
-    },
+    props: ['characters']
 }
 </script>
 
