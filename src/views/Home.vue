@@ -10,7 +10,7 @@
 <script>
 
 // @ is an alias to /src
-import ModeButton from '@/components/ModeButton.vue';
+import ModeButton from '@/components/ModeButton.vue'
 
 export default {
   name: 'Home',
@@ -28,8 +28,3 @@ export default {
   },
 }
 </script>
-
-<style>
-
-
-</style>

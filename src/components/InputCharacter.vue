@@ -1,25 +1,41 @@
 <template>
-    <div class="submit">
+    <form class="submit" @submit.prevent="handleSubmit">
         <v-select 
-        class="new-styles"
-        placeholder="Type any character's name..." 
-        :options="characters" 
-        label="name"
+            class="new-styles"
+            placeholder="Type any character's name..." 
+            :options="characters" 
+            label="name"
+            v-model="selectedCharacter"
         >
             <template #option="option">
-            <span><img :src="require('../assets/characters/' + option.img)" />
-                <div class="option-name">{{ option.name }}</div>
-            </span>
+                <span>
+                    <img :src="require('../assets/characters/' + option.img)" />
+                    <div class="option-name">{{ option.name }}</div>
+                </span>
             </template>
-            
         </v-select>
-        <img src="../assets/submit.png" alt="submit button">
-    </div>
+        <button id="submitBtn" type="submit"><img src="../assets/submit.png" alt="submit button"></button>
+    </form>
 </template>
 
 <script>
 export default {
-    props: ['characters']
+    props: ['characters'],
+    data() {
+        return {
+            selectedCharacter: ""
+        }
+    },
+    watch: {
+        selectedCharacter: function() {
+            this.handleSubmit()
+        }
+    },
+    methods: {
+        handleSubmit() {
+            this.$emit('guess', this.selectedCharacter)
+        }
+    }
 }
 </script>
 
@@ -44,6 +60,7 @@ export default {
     font-variant: Georgia;
 }
 
+.new-styles .vs__selected,
 .new-styles .vs__search,
 .new-styles .vs__dropdown-menu {
     border: none;
@@ -59,7 +76,6 @@ export default {
     font-style: italic;
 }
 
-.new-styles .vs__selected,
 .new-styles .vs__clear {
     visibility: hidden;
 }
@@ -94,5 +110,12 @@ span img {
     border: 0.1em solid #302032;
 }
 
+#submitBtn {
+    border: none;
+    height: fit-content;
+    width: fit-content;
+    background: transparent;
+    cursor: pointer;
+}
 
 </style>
