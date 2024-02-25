@@ -33,7 +33,7 @@ export default {
     },
     methods: {
         handleSubmit() {
-            this.$emit('guess', this.selectedCharacter)
+            this.$emit('start', this.selectedCharacter)
         }
     }
 }
@@ -60,7 +60,6 @@ export default {
     font-variant: Georgia;
 }
 
-.new-styles .vs__selected,
 .new-styles .vs__search,
 .new-styles .vs__dropdown-menu {
     border: none;
@@ -76,6 +75,7 @@ export default {
     font-style: italic;
 }
 
+.new-styles .vs__selected,
 .new-styles .vs__clear {
     visibility: hidden;
 }

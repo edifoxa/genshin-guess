@@ -57,7 +57,7 @@ html, body {
 
 h2 {
   color: #F5E8AF;
-  font-size: 1.5em;
+  font-size: 1.5rem;
 }
 
 h3 {

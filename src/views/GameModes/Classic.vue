@@ -1,9 +1,9 @@
 <template>
     <div class="home">
         <div class="container"><GameIntroduction :intro="'Guess today\'s Genshin Impact character!'"/></div>
-        <InputCharacter :characters="characters" @guess="guess"/>
+        <InputCharacter :characters="characters" @start="startClassic"/>
         <Countdown @end="randCharacter"/>
-        <Guess v-if="play"/>
+        <Guess v-if="play" :labels="labels" :selectedCharacter="selectedCharacter" :currentCharacter="currentCharacter" :selectedCharacterImg="selectedCharacterImg"/>
     </div>
 </template>
 
@@ -15,11 +15,13 @@ import Guess from '@/components/Guess.vue'
 
 export default {
     components: { GameIntroduction, InputCharacter, Countdown, Guess},
-    props: ['selectedCharacter'],
     data() {
         return {
+            labels: ["Character", "Gender", "Vision", "Weapon", "Region(s)", "Version"],
             characters: [],
             currentCharacter: "",
+            selectedCharacter: "",
+            selectedCharacterImg: "",
             play: false
         }
     },
@@ -50,9 +52,10 @@ export default {
                 this.randCharacter()
             }
         },
-        guess(selectedCharacter) {
-            console.log(selectedCharacter)
+        startClassic(selectedCharacter) {
             this.play = true
+            this.selectedCharacter = [selectedCharacter.gender, selectedCharacter.vision, selectedCharacter.weapon, selectedCharacter.region, selectedCharacter.version]
+            this.selectedCharacterImg = selectedCharacter.img
         }
     }
 }
