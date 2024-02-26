@@ -3,7 +3,15 @@
         <div class="container"><GameIntroduction :intro="'Guess today\'s Genshin Impact character!'"/></div>
         <InputCharacter :characters="characters" @start="startClassic"/>
         <Countdown @end="randCharacter"/>
-        <Guess v-if="play" :labels="labels" :selectedCharacter="selectedCharacter" :currentCharacter="currentCharacter" :selectedCharacterImg="selectedCharacterImg"/>
+        <Guess v-if="play" 
+            :labels="labels" 
+            :selectedCharacter="selectedCharacter" 
+            :currentCharacter="currentCharacter" 
+            :selectedCharacterImg="selectedCharacterImg" 
+            :currentCharacterImg="currentCharacterImg"
+            :currectCharacterVersion="this.currentCharacter.version"
+            :selectedCharacterVersion="this.selectedCharacter.version"
+        />
     </div>
 </template>
 
@@ -54,8 +62,22 @@ export default {
         },
         startClassic(selectedCharacter) {
             this.play = true
-            this.selectedCharacter = [selectedCharacter.gender, selectedCharacter.vision, selectedCharacter.weapon, selectedCharacter.region, selectedCharacter.version]
             this.selectedCharacterImg = selectedCharacter.img
+            this.selectedCharacter = [
+                selectedCharacter.gender, 
+                selectedCharacter.vision, 
+                selectedCharacter.weapon, 
+                selectedCharacter.region, 
+                selectedCharacter.version
+            ]
+            this.currentCharacterImg = this.currentCharacter.img
+            this.currentCharacter = [
+                this.currentCharacter.gender, 
+                this.currentCharacter.vision, 
+                this.currentCharacter.weapon, 
+                this.currentCharacter.region, 
+                this.currentCharacter.version
+            ]
         }
     }
 }

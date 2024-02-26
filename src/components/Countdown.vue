@@ -14,8 +14,7 @@ export default {
   mounted() {
     setInterval(() => {
       this.updateRemainingTime()
-    }, 1000);
-
+    }, 1000)
     // Initial update
     this.updateRemainingTime()
   },
