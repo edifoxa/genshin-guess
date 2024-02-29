@@ -1,9 +1,11 @@
 <template>
   <div class="bg">
     <div class="main">
-      <router-link to="/" class="logo">
+      <div class="upper-container">
+        <router-link to="/" class="logo">
         <img src="./assets/logo.png" alt="logo, homepage">
-      </router-link>
+        </router-link>
+      </div>
       <router-view/>
     </div>
     <footer class="text">

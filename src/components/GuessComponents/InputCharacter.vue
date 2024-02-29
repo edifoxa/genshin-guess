@@ -9,12 +9,12 @@
         >
             <template #option="option">
                 <span>
-                    <img :src="require('../assets/characters/' + option.img)" />
+                    <img :src="require('../../assets/characters/' + option.img)" />
                     <div class="option-name">{{ option.name }}</div>
                 </span>
             </template>
         </v-select>
-        <button id="submitBtn" type="submit"><img src="../assets/submit.png" alt="submit button"></button>
+        <button id="submitBtn" type="submit"><img src="../../assets/buttons/submit.png" alt="submit button"></button>
     </form>
 </template>
 
@@ -33,7 +33,7 @@ export default {
     },
     methods: {
         handleSubmit() {
-            this.$emit('start', this.selectedCharacter)
+            this.$emit('play', this.selectedCharacter)
         }
     }
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="squares-container">
-    <div class="square" :style="{ 'background-color': green ? 'rgba(64, 192, 87, 0.5)' : 'rgba(191, 69, 15, 0.5)' }">
+    <div class="square">
       <img :src="require(`@/assets/characters/${selectedCharacterImg}`)" />
     </div>
   </div>
@@ -17,31 +17,42 @@
 <script>
 export default {
   props: [
-    'currentCharacter',
     'selectedCharacter',
     'selectedCharacterImg',
     'currentCharacterImg'
   ],
+  emits: ['endGame'],
   data() {
     return {
       green: false,
       renderedSquares: 0,
+      currentCharacter: "",
+      end: false
     }
   },
   mounted() {
-    console.log(this.currentCharacter)
-    console.log(this.selectedCharacter)
-    this.compareImages();
-    this.renderSquaresWithDelay();
+    this.getCurrentCharacter()
+    this.renderSquaresWithDelay()
   },
   methods: {
-    compareImages() {
-      if (this.currentCharacterImg === this.selectedCharacterImg) {
-        this.green = true;
+    getCurrentCharacter() {
+        const storedCharacter = localStorage.getItem("currentCharacter");
+        this.currentCharacter = JSON.parse(storedCharacter);
+        return this.currentCharacter = [
+          this.currentCharacter.gender,
+          this.currentCharacter.vision,
+          this.currentCharacter.weapon,
+          this.currentCharacter.region,
+          this.currentCharacter.version
+        ]
+    },
+    compareCharacters() {
+      if(this.currentCharacterImg == this.selectedCharacterImg) {
+        this.$emit('endGame')
       }
     },
     checkCorrect(currentCharacter, selectedCharacter, index) {
-      return currentCharacter[index] === selectedCharacter[index];
+      return currentCharacter[index] == selectedCharacter[index];
     },
     checkPartial(currentCharacter, selectedCharacter, index) {
       return (
@@ -51,27 +62,28 @@ export default {
         (typeof currentCharacter[index] === 'string' &&
           typeof selectedCharacter[index] === 'string' &&
           selectedCharacter[index].includes(currentCharacter[index]))
-      );
+      )
     },
     shouldRenderSquare(index) {
       return index < this.renderedSquares;
     },
     getSquareStyle(index) {
-      const isCorrect = this.checkCorrect(this.currentCharacter, this.selectedCharacter, index);
-      const isPartial = this.checkPartial(this.currentCharacter, this.selectedCharacter, index);
+      const isCorrect = this.checkCorrect(this.currentCharacter, this.selectedCharacter, index)
+      const isPartial = this.checkPartial(this.currentCharacter, this.selectedCharacter, index)
       return {
         'background-color': isCorrect ? 'rgba(64, 192, 87, 0.5)' : isPartial ? 'rgba(250, 176, 5, 0.5)' : 'rgba(191, 69, 15, 0.5)',
         // Add any other styles to apply individually
-      };
+      }
     },
     renderSquaresWithDelay() {
-      const delay = 200;
+      const delay = 200
       this.selectedCharacter.forEach((attribute, index) => {
         setTimeout(() => {
           this.renderedSquares = index + 1;
-        }, (index + 1) * delay);
-      });
-    }
+        }, (index + 1) * delay)
+      })
+      this.compareCharacters()
+    },
   }
 }
 </script>
@@ -82,7 +94,7 @@ export default {
   display: flex;
   flex-direction: row;
   width: 100%;
-  padding: 10px;
+  padding: 5px;
 }
 
 .square {
@@ -100,5 +112,6 @@ export default {
   height: 100%;
   display: block;
   object-fit: cover;
+  background-color: rgba(0, 0, 0, 0.433);
 }
 </style>

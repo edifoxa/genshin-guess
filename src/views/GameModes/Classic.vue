@@ -3,18 +3,22 @@
     <div class="container">
       <GameIntroduction :intro="'Guess today\'s Genshin Impact character!'" />
     </div>
-    <InputCharacter :characters="characters" @start="startClassic" />
-    <Guess v-if="play" :labels="labels" :selectedCharacter="selectedCharacter" :currentCharacter="currentCharacter"
-      :selectedCharacterImg="selectedCharacterImg" :currentCharacterImg="currentCharacterImg" />
-
+    <InputCharacter v-if="isPlaying" :characters="characters" @play="playClassic" />
+    <Guess v-if="start" 
+      @endGame="endGame"
+      :labels="labels" 
+      :selectedCharacter="this.selectedCharacter"
+      :selectedCharacterImg="this.selectedCharacterImg"
+      :currentCharacterImg="this.currentCharacterImg"
+    />
     <Countdown @end="randCharacter" />
   </div>
 </template>
 
 <script>
-import GameIntroduction from "@/components/GameIntroduction.vue";
-import InputCharacter from "@/components/InputCharacter.vue";
-import Countdown from "@/components/Countdown.vue";
+import GameIntroduction from "@/components/MainComponents/GameIntroduction.vue";
+import InputCharacter from "@/components/GuessComponents/InputCharacter.vue";
+import Countdown from "@/components/ResultsComponents/Countdown.vue";
 import Guess from "@/components/GuessComponents/Guess.vue";
 
 export default {
@@ -33,7 +37,9 @@ export default {
       currentCharacter: "",
       selectedCharacter: "",
       selectedCharacterImg: "",
-      play: false,
+      currentCharacterImg: "",
+      start: false,
+      isPlaying: true
     };
   },
   mounted() {
@@ -48,7 +54,7 @@ export default {
     randCharacter() {
       this.currentCharacter =
         this.characters[Math.floor(Math.random() * this.characters.length)];
-      console.log(this.currentCharacter);
+
       // Store the current character in localStorage
       localStorage.setItem(
         "currentCharacter",
@@ -67,25 +73,22 @@ export default {
         this.randCharacter();
       }
     },
-    startClassic(selectedCharacter) {
-      this.play = true;
-      this.selectedCharacterImg = selectedCharacter.img;
+    playClassic(selectedCharacter) {
+      this.start = true;
+      this.currentCharacterImg = this.currentCharacter.img
+      this.selectedCharacterImg = selectedCharacter.img
       this.selectedCharacter = [
         selectedCharacter.gender,
         selectedCharacter.vision,
         selectedCharacter.weapon,
         selectedCharacter.region,
-        selectedCharacter.version,
-      ];
-      this.currentCharacterImg = this.currentCharacter.img;
-      this.currentCharacter = [
-        this.currentCharacter.gender,
-        this.currentCharacter.vision,
-        this.currentCharacter.weapon,
-        this.currentCharacter.region,
-        this.currentCharacter.version,
-      ];
+        selectedCharacter.version
+      ]
+      this.characters.splice(this.characters.indexOf(selectedCharacter), 1);
     },
+    endGame() {
+      this.isPlaying = false
+    }
   },
 };
 </script>

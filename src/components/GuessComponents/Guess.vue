@@ -1,12 +1,12 @@
 <template>
     <div class="board-container">
         <Answers 
-            :selectedCharacter="selectedCharacter" 
-            :currentCharacter="currentCharacter"
-            :selectedCharacterImg="selectedCharacterImg" 
-            :currentCharacterImg="currentCharacterImg"
+            @endGame="endGame"
+            :selectedCharacter="this.selectedCharacter"
+            :selectedCharacterImg="this.selectedCharacterImg" 
+            :currentCharacterImg="this.currentCharacterImg"
         />
-        <Labels v-if="firstGuess" :labels="labels" />
+        <Labels :labels="labels"/>
     </div>
 </template>
 
@@ -18,18 +18,16 @@ export default {
     components: { Labels, Answers },
     props: [
         'labels',
-        'currentCharacter',
         'selectedCharacter',
         'selectedCharacterImg',
-        'currentCharacterImg',
-        'selectedCharacterVersion',
-        'currectCharacterVersion'
+        'currentCharacterImg'
     ],
-    data() {
-        return {
-            firstGuess: true,
-        }
-    }
+    emits: ['endGame'],
+    methods: {
+        endGame() {
+            this.$emit('endGame')
+      }
+    },
 }
 </script>
 
@@ -39,6 +37,6 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: column-reverse;
-    width: 80%;
+    width: 70%;
 }
 </style>

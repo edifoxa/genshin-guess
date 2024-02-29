@@ -27,7 +27,7 @@ export default {
       const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1)
       this.remainingTime = tomorrow - now
 
-      if (time === "00:00:00") {
+      if (time == "00:00:00") {
         this.$emit('end')
       }
     }

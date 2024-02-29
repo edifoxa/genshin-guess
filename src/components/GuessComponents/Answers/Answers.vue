@@ -3,10 +3,10 @@
       v-for="answer in answers"
     >
       <DynamicAnswer
-        :currentCharacterImg="answer.parameters.currentImg"
+        @endGame="endGame"
         :selectedCharacterImg="answer.parameters.selectedImg"
-        :currentCharacter="answer.parameters.currentAnswer"
         :selectedCharacter="answer.parameters.selectedAnswer"
+        :currentCharacterImg="this.currentCharacterImg"
       />
     </div>
 </template>
@@ -17,11 +17,11 @@ import DynamicAnswer from './DynamicAnswer.vue';
 export default {
     components: { DynamicAnswer },
     props: [
-        'currentCharacterImg',
         'selectedCharacterImg',
-        'currentCharacter',
-        'selectedCharacter'
+        'selectedCharacter',
+        'currentCharacterImg'
     ],
+    emits: ['endGame'],
     data() {
       return {
         answers: [],
@@ -41,14 +41,14 @@ export default {
         const newAnswer = {
           id: this.id++,
           parameters: {
-            currentImg: this.currentCharacterImg,
             selectedImg: this.selectedCharacterImg,
-            currentAnswer: this.currentCharacter,
             selectedAnswer: this.selectedCharacter
           }
         }
         this.answers.push(newAnswer)
-        console.log(this.answers)
+      },
+      endGame() {
+        this.$emit('endGame')
       }
     }
 }  
@@ -59,6 +59,5 @@ export default {
   display: flex;
   flex-direction: row;
   width: 80%;
-  padding: 10px;
 }
 </style>
