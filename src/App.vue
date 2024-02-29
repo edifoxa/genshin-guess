@@ -2,9 +2,11 @@
   <div class="bg">
     <div class="main">
       <div class="upper-container">
+        <img src="./assets/buttons/info.png" alt="About" class="info-buttons" @click="toggleAboutModal">
         <router-link to="/" class="logo">
         <img src="./assets/logo.png" alt="logo, homepage">
         </router-link>
+        <img src="./assets/buttons/HowToPlay.png" alt="How to play" class="info-buttons" @click="toggleHowToPlayModal">
       </div>
       <router-view/>
     </div>
@@ -12,7 +14,39 @@
       Genshin Guess - 2024
     </footer>
   </div>
+
+  <teleport to='.modals' v-if="showAboutModal">
+    <About @close="toggleAboutModal"/>
+  </teleport>
+
+  <teleport to='.modals' v-if="showHowToPlayModal">
+    <HowToPlay @close="toggleHowToPlayModal"/>
+  </teleport>
+
 </template>
+
+<script>
+import About from './components/MainComponents/About.vue';
+import HowToPlay from './components/MainComponents/HowToPlay.vue';
+
+export default {
+    components: { About, HowToPlay },
+    data() {
+      return {
+        showAboutModal: false,
+        showHowToPlayModal: false
+      }
+    },
+    methods: {
+      toggleAboutModal() {
+        this.showAboutModal = !this.showAboutModal;
+      },
+      toggleHowToPlayModal() {
+        this.showHowToPlayModal = !this.showHowToPlayModal;
+      }
+    }
+}
+</script>
 
 <style>
 #app {
@@ -49,6 +83,7 @@ html, body {
 .logo img {
   margin-top: 20px;
   margin-bottom: 30px;
+  transition: transform 0.3s ease;
 }
 
 .text {
@@ -94,4 +129,26 @@ footer {
   justify-content: center;
   flex-direction: column;
 }
+
+.upper-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.info-buttons {
+  max-width: 50px;
+  max-width: 50px;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.02);
+
+}
+.info-buttons:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
 </style>
