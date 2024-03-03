@@ -66,6 +66,7 @@ export default {
     color: #F5E8AF;
     background-color: #0D0F26;
     margin-top: 0.6em;
+    z-index: 0;
 }
 
 .new-styles .vs__dropdown-toggle,
@@ -73,11 +74,13 @@ export default {
     border: none;
     color: #B29E99;
     font-style: italic;
+    z-index: 0;
 }
 
 .new-styles .vs__selected,
 .new-styles .vs__clear {
     visibility: hidden;
+    z-index: 0;
 }
 
 span {

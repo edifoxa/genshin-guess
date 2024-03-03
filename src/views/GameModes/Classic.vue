@@ -11,7 +11,7 @@
       :selectedCharacterImg="this.selectedCharacterImg"
       :currentCharacterImg="this.currentCharacterImg"
     />
-    <Countdown @end="randCharacter" />
+    <Countdown @end="randCharacter" class="countdown"/>
   </div>
 </template>
 
@@ -98,5 +98,9 @@ export default {
   padding: 1.5em 5em;
   max-width: max-content;
   width: fit-content;
+}
+
+.countdown {
+  display: none;
 }
 </style>

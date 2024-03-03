@@ -1,6 +1,7 @@
 <template>
-  <div class="container">
-    <span class="text">{{ formattedTime }}</span>
+  <div class="countdown">
+    <p class="countdown-text">Next characters in:</p>
+    <p class="text ">{{ formattedTime }}</p>
   </div>
 </template>
 
@@ -15,7 +16,6 @@ export default {
     setInterval(() => {
       this.updateRemainingTime()
     }, 1000)
-    // Initial update
     this.updateRemainingTime()
   },
   methods: {
@@ -46,5 +46,24 @@ export default {
 <style scoped>
 .text {
   color: #F9B61A;
+  font-size: x-large;
 }
+
+.countdown {
+  text-align: center;
+  margin: 15px;
+  border: solid 2px #f3db7d;
+  width: fit-content;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+p {
+  margin: 5px;
+}
+.countdown-text {
+  color: #f3e9c1;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 </style>

@@ -6,7 +6,7 @@
         <router-link to="/" class="logo">
         <img src="./assets/logo.png" alt="logo, homepage">
         </router-link>
-        <img src="./assets/buttons/HowToPlay.png" alt="How to play" class="info-buttons" @click="toggleHowToPlayModal">
+        <img src="./assets/buttons/HowToPlay.png" alt="How to play" class="info-buttons instructions" @click="toggleHowToPlayModal">
       </div>
       <router-view/>
     </div>
@@ -26,8 +26,8 @@
 </template>
 
 <script>
-import About from './components/MainComponents/About.vue';
-import HowToPlay from './components/MainComponents/HowToPlay.vue';
+import About from './components/MainComponents/Modals/About.vue';
+import HowToPlay from './components/MainComponents/Modals/HowToPlay.vue';
 
 export default {
     components: { About, HowToPlay },
@@ -150,5 +150,9 @@ footer {
   transform: scale(1.1);
   cursor: pointer;
 }
+
+/* .instructions {
+  visibility: hidden;
+} */
 
 </style>
