@@ -28,3 +28,9 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.container {
+  cursor: pointer;
+}
+</style>

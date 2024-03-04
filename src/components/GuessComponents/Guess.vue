@@ -24,8 +24,8 @@ export default {
     ],
     emits: ['endGame'],
     methods: {
-        endGame() {
-            this.$emit('endGame')
+        endGame(tries) {
+            this.$emit('endGame', tries)
       }
     },
 }
@@ -38,5 +38,6 @@ export default {
     align-items: center;
     flex-direction: column-reverse;
     width: 70%;
+    overflow-x: auto;
 }
 </style>

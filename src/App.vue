@@ -151,8 +151,4 @@ footer {
   cursor: pointer;
 }
 
-/* .instructions {
-  visibility: hidden;
-} */
-
 </style>

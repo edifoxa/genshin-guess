@@ -104,6 +104,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 83px;
   aspect-ratio: 1;
 }
 

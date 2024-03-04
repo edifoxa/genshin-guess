@@ -43,9 +43,10 @@ export default {
 
 .submit {
     display: flex;
-    width: 50%;
+    width: 60%;
     justify-content: center;
     align-items: center;
+    min-width: 383px;
 }
 
 .new-styles {

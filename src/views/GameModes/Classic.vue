@@ -1,8 +1,6 @@
 <template>
   <div class="home">
-    <div class="container">
-      <GameIntroduction :intro="'Guess today\'s Genshin Impact character!'" />
-    </div>
+    <ClassicIntroduction :intro="'Guess today\'s Genshin Impact character!'" />
     <InputCharacter v-if="isPlaying" :characters="characters" @play="playClassic" />
     <Guess v-if="start" 
       @endGame="endGame"
@@ -11,18 +9,27 @@
       :selectedCharacterImg="this.selectedCharacterImg"
       :currentCharacterImg="this.currentCharacterImg"
     />
+    <ColorIndicators v-if="isPlaying"/>
+    <Results v-if="!(isPlaying)"
+      :currentCharacterImg="this.currentCharacterImg"
+      :currentCharacterName="this.currentCharacterName"
+      :tries="this.tries"
+      :nextQuote="this.nextQuote"
+    />
     <Countdown @end="randCharacter" class="countdown"/>
   </div>
 </template>
 
 <script>
-import GameIntroduction from "@/components/MainComponents/GameIntroduction.vue";
-import InputCharacter from "@/components/GuessComponents/InputCharacter.vue";
-import Countdown from "@/components/ResultsComponents/Countdown.vue";
-import Guess from "@/components/GuessComponents/Guess.vue";
+import ClassicIntroduction from "@/components/MainComponents/Introductions/ClassicIntroduction.vue"
+import InputCharacter from "@/components/GuessComponents/InputCharacter.vue"
+import Countdown from "@/components/ResultsComponents/Countdown.vue"
+import Guess from "@/components/GuessComponents/Guess.vue"
+import ColorIndicators from "@/components/MainComponents/ColorIndicators.vue"
+import Results from "@/components/ResultsComponents/Results.vue"
 
 export default {
-  components: { GameIntroduction, InputCharacter, Countdown, Guess },
+  components: { ClassicIntroduction, InputCharacter, Countdown, Guess, ColorIndicators, Results },
   data() {
     return {
       labels: [
@@ -38,8 +45,11 @@ export default {
       selectedCharacter: "",
       selectedCharacterImg: "",
       currentCharacterImg: "",
+      currentCharacterName: "",
       start: false,
-      isPlaying: true
+      isPlaying: true,
+      nextQuote: true,
+      tries: 0
     };
   },
   mounted() {
@@ -75,6 +85,7 @@ export default {
     },
     playClassic(selectedCharacter) {
       this.start = true;
+      this.currentCharacterName = this.currentCharacter.name
       this.currentCharacterImg = this.currentCharacter.img
       this.selectedCharacterImg = selectedCharacter.img
       this.selectedCharacter = [
@@ -86,20 +97,16 @@ export default {
       ]
       this.characters.splice(this.characters.indexOf(selectedCharacter), 1);
     },
-    endGame() {
+    endGame(tries) {
+      console.log(tries)
       this.isPlaying = false
+      this.tries = tries
     }
   },
 };
 </script>
 
 <style scoped>
-.container {
-  padding: 1.5em 5em;
-  max-width: max-content;
-  width: fit-content;
-}
-
 .countdown {
   display: none;
 }

@@ -25,7 +25,8 @@ export default {
     data() {
       return {
         answers: [],
-        id: 0
+        id: 0,
+        tries: 0
       }
     },
     mounted() {
@@ -46,9 +47,10 @@ export default {
           }
         }
         this.answers.push(newAnswer)
+        this.tries++
       },
       endGame() {
-        this.$emit('endGame')
+        this.$emit('endGame', this.tries)
       }
     }
 }  

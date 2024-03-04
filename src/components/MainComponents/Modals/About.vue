@@ -88,14 +88,6 @@ export default {
         font-style: italic;
     }
 
-    .centered-text {
-        display: flex;
-        justify-content: center;
-        font-size: 1.5em;
-        color: #f3db7d;
-        margin: 5px 0;
-    }
-
     .modal-text-cr {
         color: #B29E99;
         margin: 5px 0;
