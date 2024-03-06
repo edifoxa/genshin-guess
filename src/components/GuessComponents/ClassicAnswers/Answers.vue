@@ -1,7 +1,5 @@
 <template>
-    <div class="answers-container" :key="answer.id"
-      v-for="answer in answers"
-    >
+    <div class="answers-container" v-for="answer in answers" :key="answer.id">
       <DynamicAnswer
         @endGame="endGame"
         :selectedCharacterImg="answer.parameters.selectedImg"

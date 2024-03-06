@@ -1,67 +1,125 @@
 <template>
     <div class="home">
         <div class="container">
-            <h3>Which character says:</h3>
+            <QuoteIntroduction
+            :currentQuote="currentQuote"
+            :currentAudio="currentAudio"
+        />  
         </div>
-        <InputCharacter v-if="isPlaying" :characters="characters"/>
+        <InputCharacter v-if="isPlaying" :characters="characters" @play="playQuote"/>
+        <Guess v-if="start" @endGame="endGame"
+            :selectedCharacterImg="selectedCharacterImg"
+            :selectedCharacterName="selectedCharacterName"
+        />
+        <Results v-if="!(isPlaying)"
+            :currentCharacterImg="this.currentCharacterImg"
+            :currentCharacterName="this.currentCharacterName"
+            :tries="this.tries"
+            :nextSplash="this.nextSplash"
+            :currentAudio="currentAudio"
+        />
     </div>
+    <div ref="scrollTarget"></div>
 </template>
 
 <script>
-import InputCharacter from '@/components/GuessComponents/InputCharacter.vue';
+import QuoteIntroduction from '@/components/MainComponents/Introductions/QuoteIntroduction.vue'
+import InputCharacter from '@/components/GuessComponents/InputCharacter.vue'
+import Guess from '@/components/GuessComponents/QuoteSplashAnswers/Guess.vue'
+import Results from '@/components/ResultsComponents/Results.vue'
 
 export default {
-    components: { InputCharacter },
+    components: { QuoteIntroduction, InputCharacter, Guess, Results },
     data() {
         return {
             characters: [],
-            quotes: [],
             currentQuote: "",
             currentAudio: "",
-            selectedQuote: "",
-            selectedAudio: "",
-            start: false,
+            currentCharacterImg: "",
+            currentCharacterName: "",
+            selectedCharacterImg: "",
+            selectedCharacterName: "",
             isPlaying: true,
+            start: false,
             nextSplash: true,
             tries: 0
         }
     },
     mounted() {
+    // localStorage.clear();
     fetch("http://localhost:3000/characters")
       .then((res) => res.json())
       .then((data) => {
         this.characters = data;
-        // this.getDailyQuote()
-        this.randQuote()
-
+        this.getDailyQuote()
       })
+      console.log(this.currentCharacterImg, this.currentCharacterName)
     },
     methods: {
         randQuote() {
             let currentCharacter = this.characters[Math.floor(Math.random() * this.characters.length)];
-            console.log(currentCharacter)
-            console.log(currentCharacter.quote)
-            // Store the current character in localStorage
-            // localStorage.setItem(
-            //     "currentQuote",
-            //     JSON.stringify(this.currentCharacter)
-            // )
+            this.currentQuote = currentCharacter.quote
+            this.currentAudio = currentCharacter.audio
+            this.currentCharacterName = currentCharacter.name
+            this.currentCharacterImg = currentCharacter.img
+
+            // Store the current voiceline in localStorage
+            localStorage.setItem(
+                "currentQuote",
+                this.currentQuote
+            )
+            localStorage.setItem(
+                "currentAudio",
+                this.currentAudio
+            )
+            localStorage.setItem(
+                "currentQuoteName",
+                this.currentCharacterName
+            )
+            localStorage.setItem(
+                "currentQuoteImg",
+                this.currentCharacterImg
+            )
         },
-        // getDailyQuote() {
-        //     // Check if the character is stored in localStorage
-        //     if (localStorage.getItem("currentQuote") !== null) {
-        //         console.log("storedQuote is not null");
-        //         const storedQuote = localStorage.getItem("currentQuote");
-        //         console.log(storedQuote);
-        //         this.currentQuote = JSON.parse(storedQuote);
-        //     } else {
-        //         console.log("storedQuote is null");
-        //         this.randQuote()
-        //     }
-        // }
+        getDailyQuote() {
+            // Check if the voiceline is stored in localStorage
+            if ((localStorage.getItem("currentQuote") !== null) && (localStorage.getItem("currentAudio") !== null)) {
+                // console.log("currentQuote and storedAudio are not null");
+                const storedAudio = localStorage.getItem("currentAudio")
+                const storedQuote = localStorage.getItem("currentQuote")
+                const storedQuoteName = localStorage.getItem("currentQuoteName")
+                const storedQuoteImg = localStorage.getItem("currentQuoteImg")
+                this.currentAudio = storedAudio
+                this.currentQuote = storedQuote
+                this.currentCharacterName = storedQuoteName
+                this.currentCharacterImg = storedQuoteImg
+            } else {
+                console.log("storedQuote and storedAudio are null")
+                this.randQuote()
+            }
+        },
+        playQuote(selectedCharacter) {
+            this.start = true
+            this.selectedCharacterImg = selectedCharacter.img
+            this.selectedCharacterName = selectedCharacter.name
+            this.characters.splice(this.characters.indexOf(selectedCharacter), 1)
+        },
+        endGame(tries) {
+            this.isPlaying = false
+            this.tries = tries
+        }
     }
 }
 </script>
-
-<style>
+<style scoped>
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    min-width: min-content;
+    width: 50%;
+    max-width: 800px;
+}
 </style>

@@ -12,7 +12,7 @@
 
 <script>
 import Labels from './Labels.vue';
-import Answers from './Answers/Answers.vue';
+import Answers from './Answers.vue';
 
 export default {
     components: { Labels, Answers },
@@ -26,7 +26,7 @@ export default {
     methods: {
         endGame(tries) {
             this.$emit('endGame', tries)
-      }
+        }
     },
 }
 </script>

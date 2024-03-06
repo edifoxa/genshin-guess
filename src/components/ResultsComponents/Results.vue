@@ -18,29 +18,38 @@
                 <hr>
             </h2>
         </div>
+        <div v-if="currentAudio">
+            <AudioPlayer :currentAudio="currentAudio"
+            />
+        </div>
         <div class="next-mode">
             <h2 class="results-text">
                 Next mode:
             </h2>
-            <div v-if="classic" class="container mode" @click="goClassic">
+            <div v-if="nextClassic" class="container mode" @click="goClassic">
                 <ModeButton :title="'Classic Mode'" :description="'Get hints on every try'"/>
             </div>
             <div v-if="nextQuote" class="container mode" @click="goQuote">
                 <ModeButton :title="'Quote'" :description="'Guess with in-game quotes'"/>
             </div>
-            <div v-if="splash" class="container mode" @click="goSplash">
+            <div v-if="nextSplash" class="container mode" @click="goSplash">
                 <ModeButton :title="'Splash'" :description="'Guess from an image section'"/>
             </div>
         </div>
     </div>
+    <div ref="scrollTarget"></div>
 </template>
 
 <script>
-import ModeButton from '../MainComponents/ModeButton.vue';
+import ModeButton from '../MainComponents/ModeButton.vue'
+import AudioPlayer from '@/components/MainComponents/AudioPlayer.vue'
 
 export default {
-    props: ['currentCharacterImg', 'currentCharacterName', 'tries', 'nextClassic', 'nextQuote'],
-    components: { ModeButton },
+    props: ['currentCharacterImg', 'currentCharacterName', 'tries', 'nextClassic', 'nextQuote', 'nextSplash', 'currentAudio'],
+    components: { ModeButton, AudioPlayer },
+    mounted() {
+        this.scrollToBottom()
+    },
     methods: {
         goClassic() {
         this.$router.push({ name: 'Classic' })
@@ -50,6 +59,14 @@ export default {
         },
         goSplash() {
         this.$router.push({ name: 'Splash' })
+        },
+        scrollToBottom() {
+            const scrollTarget = this.$refs.scrollTarget
+            // Scroll to the bottom of the element
+            scrollTarget.scrollIntoView({
+                behavior: 'smooth',
+                block: 'end',
+            });
         }
     }
 }

@@ -138,7 +138,6 @@ footer {
 
 .info-buttons {
   max-width: 50px;
-  max-width: 50px;
   transition: transform 0.3s ease;
 }
 

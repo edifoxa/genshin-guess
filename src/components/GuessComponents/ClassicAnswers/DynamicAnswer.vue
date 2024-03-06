@@ -49,6 +49,7 @@ export default {
     compareCharacters() {
       if(this.currentCharacterImg == this.selectedCharacterImg) {
         this.$emit('endGame')
+        console.log("dupa")
       }
     },
     checkCorrect(currentCharacter, selectedCharacter, index) {
@@ -71,7 +72,7 @@ export default {
       const isCorrect = this.checkCorrect(this.currentCharacter, this.selectedCharacter, index)
       const isPartial = this.checkPartial(this.currentCharacter, this.selectedCharacter, index)
       return {
-        'background-color': isCorrect ? 'rgba(64, 192, 87, 0.5)' : isPartial ? 'rgba(250, 176, 5, 0.5)' : 'rgba(191, 69, 15, 0.5)',
+        'background-color': isCorrect ? 'rgba(64, 192, 87, 0.5)' : isPartial ? 'rgba(250, 176, 5, 0.5)' : 'rgba(191, 69, 15, 0.5)'
         // Add any other styles to apply individually
       }
     },

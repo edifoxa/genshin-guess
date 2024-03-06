@@ -24,7 +24,7 @@
 import ClassicIntroduction from "@/components/MainComponents/Introductions/ClassicIntroduction.vue"
 import InputCharacter from "@/components/GuessComponents/InputCharacter.vue"
 import Countdown from "@/components/ResultsComponents/Countdown.vue"
-import Guess from "@/components/GuessComponents/Guess.vue"
+import Guess from "@/components/GuessComponents/ClassicAnswers/Guess.vue"
 import ColorIndicators from "@/components/MainComponents/ColorIndicators.vue"
 import Results from "@/components/ResultsComponents/Results.vue"
 
