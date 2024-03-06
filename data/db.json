@@ -9,7 +9,8 @@
             "region": "Mondstadt",
             "version": 1.2,
             "splash": "Albedo_splash.png",
-            "quote": "Albedo_audio.mp3"
+            "quote": "What a view... How about a quick break so I can sketch this beautiful scenery?",
+            "audio": "Albedo_audio.ogg"
         },
         {
             "img": "Alhaitham.png",
@@ -20,7 +21,8 @@
             "region": "Sumeru",
             "version": 3.4,
             "splash": "Alhaitham_splash.png",
-            "quote": "Alhaitham_audio.mp3"
+            "quote": "I hope my roommate won't be hammering away on another one of his projects in the dead of night... (...)",
+            "audio": "Alhaitham_audio.ogg"
         },
         {
             "img": "Aloy.png",
@@ -31,7 +33,8 @@
             "region": "None",
             "version": 2.1,
             "splash": "Aloy_splash.png",
-            "quote": "Aloy_audio.mp3"
+            "quote": "I grew up an outcast, and it wasn't much fun. Even though I'm a stranger here, people are friendlier than the tribe that was supposed to raise me (...)",
+            "audio": "Aloy_audio.ogg"
         },
         {
             "img": "Amber.png",
@@ -42,7 +45,8 @@
             "region": "Mondstadt",
             "version": 1.0,
             "splash": "Amber_splash.png",
-            "quote": "Amber_audio.mp3"
+            "quote": "Look, there's a pigeon over there! *giggle* I wish I could fly alongside them.",
+            "audio": "Amber_audio.mp3"
         },
         {
             "img": "Arataki_Itto.png",
@@ -53,7 +57,8 @@
             "region": "Inazuma",
             "version": 2.3,
             "splash": "Arataki_Itto_splash.png",
-            "quote": "Arataki_Itto_audio.mp3"
+            "quote": "Pff, real men don't carry umbrellas... Oh boy, wow, it's really starting to pick up. Uh quick, c'mon, get yours out! C'mon, quick, quick, quick!",
+            "audio": "Arataki_Itto_audio.ogg"
         },
         {
             "img": "Baizhu.png",
@@ -64,7 +69,8 @@
             "region": "Liyue",
             "version": 3.6,
             "splash": "Baizhu_splash.png",
-            "quote": "Baizhu_audio.mp3"
+            "quote": "You mustn't sit for extended periods of time after eating lunch. Instead, I recommend going for a walk, it's good for digestion.",
+            "audio": "Baizhu_audio.ogg"
         },
         {
             "img": "Barbara.png",
@@ -75,7 +81,8 @@
             "region": "Mondstadt",
             "version": 1.0,
             "splash": "Barbara_splash.png",
-            "quote": "Barbara_audio.mp3"
+            "quote": "This weather is so amazing! I could burst into song.",
+            "audio": "Barbara_audio.ogg"
         },
         {
             "img": "Beidou.png",
@@ -86,7 +93,8 @@
             "region": "Liyue",
             "version": 1.0,
             "splash": "Beidou_splash.png",
-            "quote": "Beidou_audio.mp3"
+            "quote": "It's hard to remain on dry land for so long. Can never seem to quite get my land legs back.",
+            "audio": "Beidou_audio.ogg"
         },
         {
             "img": "Bennett.png",
@@ -97,7 +105,8 @@
             "region": "Mondstadt",
             "version": 1.0,
             "splash": "Bennett_splash.png",
-            "quote": "Bennett_audio.mp3"
+            "quote": "Careful! In this kind of wind, it's easy to get hit in the head by flying rocks.",
+            "audio": "Bennett_audio.ogg"
         },
         {
             "img": "Candace.png",
@@ -108,7 +117,8 @@
             "region": "Sumeru",
             "version": 3.1,
             "splash": "Candace_splash.png",
-            "quote": "Candace_audio.mp3"
+            "quote": "I will always seek to protect the things that are most important, no matter what it takes... even when it looks futile.",
+            "audio": "Candace_audio.ogg"
         },
         {
             "img": "Charlotte.png",
@@ -119,7 +129,8 @@
             "region": "Fontaine",
             "version": 4.2,
             "splash": "Charlotte_splash.png",
-            "quote": "Charlotte_audio.mp3"
+            "quote": "Drat! Missed it again. I never quite manage to get a shot of the lightning strike...",
+            "audio": "Charlotte_audio.ogg"
         },
         {
             "img": "Chevreuse.png",
@@ -130,7 +141,8 @@
             "region": "Fontaine",
             "version": 4.3,
             "splash": "Chevreuse_splash.png",
-            "quote": "Chevreuse_audio.mp3"
+            "quote": "What nice weather! Especially good for keeping an eye on things.",
+            "audio": "Chevreuse_audio.ogg"
         },
         {
             "img": "Chongyun.png",
@@ -141,7 +153,8 @@
             "region": "Liyue",
             "version": 1.0,
             "splash": "Chongyun_splash.png",
-            "quote": "Chongyun_audio.mp3"
+            "quote": "\"Heart be pure, evil be erased. Mind be purged, world be...\" Um... Ugh, I always forget that last part.",
+            "audio": "Chongyun_audio.ogg"
         },
         {
             "img": "Collei.png",
@@ -152,7 +165,8 @@
             "region": "Liyue",
             "version": 3.0,
             "splash": "Collei_splash.png",
-            "quote": "Collei_audio.mp3"
+            "quote": "It's quite normal to be out until midday on the longer patrol routes. I brought a few extra Pita Pockets — would you like one?",
+            "audio": "Collei_audio.ogg"
         },
         {
             "img": "Cyno.png",
@@ -163,7 +177,8 @@
             "region": "Sumeru",
             "version": 3.1,
             "splash": "Cyno_splash.png",
-            "quote": "Cyno_audio.mp3"
+            "quote": " I do try to lighten the mood sometimes, but... I'm not the best judge of other people's sense of humor.",
+            "audio": "Cyno_audio.ogg"
         },
         {
             "img": "Dehya.png",
@@ -174,7 +189,8 @@
             "region": "Sumeru",
             "version": 3.5,
             "splash": "Dehya_splash.png",
-            "quote": "Dehya_audio.mp3"
+            "quote": "We mercs have one simple rule: Whoever pays the most is your new boss.",
+            "audio": "Dehya_audio.ogg"
         },
         {
             "img": "Diluc.png",
@@ -185,7 +201,8 @@
             "region": "Mondstadt",
             "version": 1.0,
             "splash": "Diluc_splash.png",
-            "quote": "Diluc_audio.mp3"
+            "quote": "The legend of the \"Darknight Hero\"? An interesting rumor.",
+            "audio": "Diluc_audio.ogg"
         },
         {
             "img": "Diona.png",
@@ -196,7 +213,8 @@
             "region": "Mondstadt",
             "version": 1.1,
             "splash": "Diona_splash.png",
-            "quote": "Diona_audio.mp3"
+            "quote": "Morning~ Can you hand me that can of salted loach from the cabinet? Time to destroy the wine industry!",
+            "audio": "Diona_audio.ogg"
         },
         {
             "img": "Dori.png",
@@ -207,7 +225,8 @@
             "region": "Sumeru",
             "version": 3.0,
             "splash": "Dori_splash.png",
-            "quote": "Dori_audio.mp3"
+            "quote": "With enough Mora, you can afford to do anything — even take on the Akademiya.",
+            "audio": "Dori_audio.ogg"
         },
         {
             "img": "Eula.png",
@@ -218,7 +237,8 @@
             "region": "Mondstadt",
             "version": 1.5,
             "splash": "Eula_splash.png",
-            "quote": "Eula_audio.mp3"
+            "quote": "You want to learn some Favonius Bladework? Heh, alright then, I'll teach you.... Oh yes, I'll teach you, alright, mark my words...",
+            "audio": "Eula_audio.ogg"
         },
         {
             "img": "Faruzan.png",
@@ -229,7 +249,8 @@
             "region": "Sumeru",
             "version": 3.3,
             "splash": "Faruzan_splash.png",
-            "quote": "Faruzan_audio.mp3"
+            "quote": "Academic research isn't some kind of fad. Topics don't just go in and out of fashion.",
+            "audio": "Faruzan_audio.ogg"
         },
         {
             "img": "Fischl.png",
@@ -240,7 +261,8 @@
             "region": "Mondstadt",
             "version": 1.0,
             "splash": "Fischl_splash.png",
-            "quote": "Fischl_audio.mp3"
+            "quote": "Oh, the sun's out— Oh, um... This meteorological transformation is most splendid! Like a felicitous twist of fate in the face of certain doom.",
+            "audio": "Fischl_audio.ogg"
         },
         {
             "img": "Freminet.png",
@@ -251,7 +273,8 @@
             "region": "Fontaine",
             "version": 4.0,
             "splash": "Freminet_splash.png",
-            "quote": "Freminet_audio.mp3"
+            "quote": "I want to spend some time at the bottom of the sea... In peace and total silence.",
+            "audio": "Freminet_audio.ogg"
         },
         {
             "img": "Furina.png",
@@ -262,7 +285,8 @@
             "region": "Fontaine",
             "version": 4.2,
             "splash": "Furina_splash.png",
-            "quote": "Furina_audio.mp3"
+            "quote": "*sigh* Being too popular can be such a hassle. Who knew the people would adore me so much?",
+            "audio": "Furina_audio.ogg"
         },
         {
             "img": "Gaming.png",
@@ -273,7 +297,8 @@
             "region": "Liyue",
             "version": 4.4,
             "splash": "Gaming_splash.png",
-            "quote": "Gaming_audio.mp3"
+            "quote": "Boom-boom tsh, and eyes! And boom-boom tsh, and mouth! And... hmm... I need to tighten up that part.",
+            "audio": "Gaming_audio.ogg"
         },
         {
             "img": "Ganyu.png",
@@ -284,7 +309,8 @@
             "region": "Liyue",
             "version": 1.2,
             "splash": "Ganyu_splash.png",
-            "quote": "Ganyu_audio.mp3"
+            "quote": "Oh, the sun's out. When did that happen?",
+            "audio": "Ganyu_audio.ogg"
         },
         {
             "img": "Gorou.png",
@@ -295,7 +321,8 @@
             "region": "Inazuma",
             "version": 2.3,
             "splash": "Gorou_splash.png",
-            "quote": "Gorou_audio.mp3"
+            "quote": "A strong body shows strength and instills confidence in others around you. I must always stay at the top of my game!",
+            "audio": "Gorou_audio.ogg"
         },
         {
             "img": "Hu_Tao.png",
@@ -306,7 +333,8 @@
             "region": "Liyue",
             "version": 1.3,
             "splash": "Hu_Tao_splash.png",
-            "quote": "Hu_Tao_audio.mp3"
+            "quote": "When the sun's out, bathe in sunlight. But when the moon's out, bathe in moonlight~",
+            "audio": "Hu_Tao_audio.ogg"
         },
         {
             "img": "Jean.png",
@@ -317,7 +345,8 @@
             "region": "Mondstadt",
             "version": 1.0,
             "splash": "Jean_splash.png",
-            "quote": "Jean_audio.mp3"
+            "quote": "It seems I'm immune to coffee now. Perhaps I need to ask Lisa for something... a little stronger...",
+            "audio": "Jean_audio.ogg"
         },
         {
             "img": "Kaedehara_Kazuha.png",
@@ -328,7 +357,8 @@
             "region": "Inazuma",
             "version": 1.6,
             "splash": "Kaedehara_Kazuha_splash.png",
-            "quote": "Kaedehara_Kazuha_audio.mp3"
+            "quote": "This scenery is wonderful... Surely enough to convince anyone to become a wanderer.",
+            "audio": "Kaedehara_Kazuha_audio.ogg"
         },
         {
             "img": "Kaeya.png",
@@ -339,7 +369,8 @@
             "region": "Mondstadt, Khaenri'ah",
             "version": 1.0,
             "splash": "Kaeya_splash.png",
-            "quote": "Kaeya_audio.mp3"
+            "quote": "Lonely? Me? Not with someone here nagging me all the time, that's for sure.",
+            "audio": "Kaeya_audio.ogg"
         },
         {
             "img": "Kamisato_Ayaka.png",
@@ -350,7 +381,8 @@
             "region": "Inazuma",
             "version": 2.0,
             "splash": "Kamisato_Ayaka_splash.png",
-            "quote": "Kamisato_Ayaka_audio.mp3"
+            "quote": "I have great affection for the arts: music, song, poetry, shougi, and dancing. And you?",
+            "audio": "Kamisato_Ayaka_audio.ogg"
         },
         {
             "img": "Kamisato_Ayato.png",
@@ -361,7 +393,8 @@
             "region": "Inazuma",
             "version": 2.6,
             "splash": "Kamisato_Ayato_splash.png",
-            "quote": "Kamisato_Ayato_audio.mp3"
+            "quote": "Let's take shelter for the time being. Don't worry, one of my people will be here with umbrellas momentarily.",
+            "audio": "Kamisato_Ayato_audio.ogg"
         },
         {
             "img": "Kaveh.png",
@@ -372,7 +405,8 @@
             "region": "Sumeru",
             "version": 3.6,
             "splash": "Kaveh_splash.png",
-            "quote": "Kaveh_audio.mp3"
+            "quote": "Did you sleep well? I hope you have a great day today. And that you don't run into someone who ruins your day first thing in the morning.",
+            "audio": "Kaveh_audio.ogg"
         },
         {
             "img": "Keqing.png",
@@ -383,7 +417,8 @@
             "region": "Liyue",
             "version": 1.0 ,
             "splash": "Keqing_splash.png",
-            "quote": "Keqing_audio.mp3"
+            "quote": "In adventuring, as in business, you always have to seize the opportunity while it's there.",
+            "audio": "Keqing_audio.ogg"
         },
         {
             "img": "Kirara.png",
@@ -394,7 +429,8 @@
             "region": "Inazuma",
             "version": 3.7,
             "splash": "Kirara_splash.png",
-            "quote": "Kirara_audio.mp3"
+            "quote": "Meeoww! Phew... I almost forgot how to speak like a human...",
+            "audio": "Kirara_audio.ogg"
         },
         {
             "img": "Klee.png",
@@ -405,7 +441,8 @@
             "region": "Mondstadt",
             "version": 1.0,
             "splash": "Klee_splash.png",
-            "quote": "Klee_audio.mp3"
+            "quote": "Do you wanna come fish blasting with me? I'll get grounded for a whole day, but it's way worth it coz the fish taste sooo goood!",
+            "audio": "Klee_audio.ogg"
         },
         {
             "img": "Kujou_Sara.png",
@@ -416,7 +453,8 @@
             "region": "Inazuma",
             "version": 2.1,
             "splash": "Kujou_Sara_splash.png",
-            "quote": "Kujou_Sara_audio.mp3"
+            "quote": "Listen. Thunder speaks the will of the Almighty Shogun.",
+            "audio": "Kujou_Sara.ogg"
         },
         {
             "img": "Kuki_Shinobu.png",
@@ -427,7 +465,8 @@
             "region": "Inazuma",
             "version": 2.7,
             "splash": "Kuki_Shinobu_splash.png",
-            "quote": "Kuki_Shinobu_audio.mp3"
+            "quote": "Some commissions are better done by night. I can't trust the gang with such tasks though, so I usually do them myself.",
+            "audio": "Kuki_Shinobu_audio.ogg"
         },
         {
             "img": "Layla.png",
@@ -438,7 +477,8 @@
             "region": "Sumeru",
             "version": 3.2,
             "splash": "Layla_splash.png",
-            "quote": "Layla_audio.mp3"
+            "quote": "Did you get enough sleep? If you're still tired, you should go back to sleep for a bit... Me? *sigh* I'm... used to it...",
+            "audio": "Layla_audio.ogg"
         },
         {
             "img": "Lisa.png",
@@ -446,10 +486,11 @@
             "gender": "Female",
             "vision": "Electro", 
             "weapon": "Catalyst",
-            "region": "Mondstadt",
+            "region": "Mondstadt, Sumeru",
             "version": 1.0,
             "splash": "Lisa_splash.png",
-            "quote": "Lisa_audio.mp3"
+            "quote": "Oh aren't you just the sweetest? Thanks, cutie, you just made my day.",
+            "audio": "Lisa_audio.ogg"
         },
         {
             "img": "Lynette.png",
@@ -460,7 +501,8 @@
             "region": "Fontaine",
             "version": 4.0,
             "splash": "Lynette_splash.png",
-            "quote": "Lynette_audio.mp3"
+            "quote": "Entering Standby Mode... I hope nobody disturbs me.",
+            "audio": "Lynette_audio.ogg"
         },
         {
             "img": "Lyney.png",
@@ -471,7 +513,8 @@
             "region": "Fontaine",
             "version": 4.0,
             "splash": "Lyney_splash.png",
-            "quote": "Lyney_audio.mp3"
+            "quote": "There's no way we'll be able to see the stars tonight in this weather. Unless... I try making the stars appear anyway!",
+            "audio": "Lyney_audio.ogg"
         },
         {
             "img": "Mika.png",
@@ -482,7 +525,8 @@
             "region": "Mondstadt",
             "version": 3.5,
             "splash": "Mika_splash.png",
-            "quote": "Mika_audio.mp3"
+            "quote": "Verifying our current position, measuring distance to target area... Alright, I've recorded the terrain conditions.",
+            "audio": "Mika_audio.ogg"
         },
         {
             "img": "Mona.png",
@@ -493,7 +537,8 @@
             "region": "Mondstadt",
             "version": 1.0,
             "splash": "Mona_splash.png",
-            "quote": "Mona_audio.mp3"
+            "quote": "Fate is called as such, for it cannot be changed, nor can it be reversed. It can only but be accepted.",
+            "audio": "Mona_audio.ogg"
         },
         {
             "img": "Nahida.png",
@@ -504,7 +549,8 @@
             "region": "Sumeru",
             "version": 3.2,
             "splash": "Nahida_splash.png",
-            "quote": "Nahida_audio.mp3"
+            "quote": "Quick, let's find shelter, or mushrooms will start growing on our heads.",
+            "audio": "Nahida_audio.ogg"
         },
         {
             "img": "Navia.png",
@@ -515,7 +561,8 @@
             "region": "Fontaine",
             "version": 4.3,
             "splash": "Navia_splash.png",
-            "quote": "Navia_audio.mp3"
+            "quote": "Sunglasses are great at keeping the sand out of your eyes so you can see your way! Except at night... then you can't see anything at all...",
+            "audio": "Navia_audio.ogg"
         },
         {
             "img": "Neuvillette.png",
@@ -526,7 +573,8 @@
             "region": "Fontaine",
             "version": 4.1,
             "splash": "Neuvillette_splash.png",
-            "quote": "Neuvillette_audio.mp3"
+            "quote": "Ah, my apologies. This heavy rain must be quite an inconvenience for you.",
+            "audio": "Neuvillette_audio.ogg"
         },
         {
             "img": "Nilou.png",
@@ -537,7 +585,8 @@
             "region": "Sumeru",
             "version": 3.1,
             "splash": "Nilou_splash.png",
-            "quote": "Nilou_audio.mp3"
+            "quote": "First get into position like this, then move like that... Yep, that's it.",
+            "audio": "Nilou_audio.ogg"
         },
         {
             "img": "Ningguang.png",
@@ -548,7 +597,8 @@
             "region": "Liyue",
             "version": 1.0,
             "splash": "Ningguang_splash.png",
-            "quote": "Ningguang_audio.mp3"
+            "quote": "We should look for a new investment. Mora doesn't grow on trees.",
+            "audio": "Ningguang_audio.ogg"
         },
         {
             "img": "Noelle.png",
@@ -559,7 +609,8 @@
             "region": "Mondstadt",
             "version": 1.0,
             "splash": "Noelle_splash.png",
-            "quote": "Noelle_audio.mp3"
+            "quote": "You seem tired. Would you like some tea? I'll brew you some. Do you take sugar? One cube, or two?",
+            "audio": "Noelle_audio.ogg"
         },
         {
             "img": "Qiqi.png",
@@ -570,7 +621,8 @@
             "region": "Liyue",
             "version": 1.0,
             "splash": "Qiqi_splash.png",
-            "quote": "Qiqi_audio.mp3"
+            "quote": "Hey, do you know what? Uhh... neither do I. I... already forgot.",
+            "audio": "Qiqi_audio.ogg"
         },
         {
             "img": "Raiden_Shogun.png",
@@ -581,7 +633,8 @@
             "region": "Inazuma",
             "version": 2.1,
             "splash": "Raiden_Shogun_splash.png",
-            "quote": "Raiden_Shogun_audio.mp3"
+            "quote": "All the world holds dear is but a backdrop of constant motion. I stand before it alone and unchanging.",
+            "audio": "Raiden_Shogun_audio.ogg"
         },
         {
             "img": "Razor.png",
@@ -592,7 +645,8 @@
             "region": "Mondstadt",
             "version": 1.0,
             "splash": "Razor_splash.png",
-            "quote": "Razor_audio.mp3"
+            "quote": "I had a big lunch. Lots of meat. Mm, I'm happy.",
+            "audio": "Razor_audio.ogg"
         },
         {
             "img": "Rosaria.png",
@@ -603,7 +657,8 @@
             "region": "Mondstadt",
             "version": 1.4,
             "splash": "Rosaria_splash.png",
-            "quote": "Rosaria_audio.mp3"
+            "quote": "Blessings from the Anemo Archon Barsibato? Wait... no, it's Bartobas...?",
+            "audio": "Rosaria_audio.ogg"
         },
         {
             "img": "Sangonomiya_Kokomi.png",
@@ -614,7 +669,8 @@
             "region": "Inazuma",
             "version": 2.1,
             "splash": "Sangonomiya_Kokomi_splash.png",
-            "quote": "Sangonomiya_Kokomi_audio.mp3"
+            "quote": "Respect must be given to the will of every creature. Each fish in the ocean swims in its own direction.",
+            "audio": "Sangonomiya_Kokomi_audio.ogg"
         },
         {
             "img": "Sayu.png",
@@ -625,7 +681,8 @@
             "region": "Inazuma",
             "version": 2.0,
             "splash": "Sayu_splash.png",
-            "quote": "Sayu_audio.mp3"
+            "quote": "Surely I should be due a growth spurt by now?",
+            "audio": "Sayu_audio.ogg"
         },
         {
             "img": "Shenhe.png",
@@ -636,7 +693,8 @@
             "region": "Liyue",
             "version": 2.4,
             "splash": "Shenhe_splash.png",
-            "quote": "Shenhe_audio.mp3"
+            "quote": "The assumption that every person has somewhere to call home is naive. I got used to living in the mountains alongside the birds and beasts a long time ago.",
+            "audio": "Shenhe_audio.ogg"
         },
         {
             "img": "Shikanoin_Heizou.png",
@@ -647,7 +705,8 @@
             "region": "Inazuma",
             "version": 2.8,
             "splash": "Shikanoin_Heizou_splash.png",
-            "quote": "Shikanoin_Heizou_audio.mp3"
+            "quote": "Huh, my intuition tells me that something very interesting is about to happen...",
+            "audio": "Shikanoin_Heizou_audio.ogg"
         },
         {
             "img": "Sucrose.png",
@@ -658,7 +717,8 @@
             "region": "Mondstadt",
             "version": 1.0,
             "splash": "Sucrose_splash.png",
-            "quote": "Sucrose_audio.mp3"
+            "quote": "Humidity levels are increasing. Think we could run some tests?",
+            "audio": "Sucrose_audio.ogg"
         },
         {
             "img": "Tartaglia.png",
@@ -669,7 +729,8 @@
             "region": "Snezhnaya",
             "version": 1.1,
             "splash": "Tartaglia_splash.png",
-            "quote": "Tartaglia_audio.mp3"
+            "quote": "This place is pretty dead... By which I mean, there's nothing to kill.",
+            "audio": "Tartaglia_audio.ogg"
         },
         {
             "img": "Thoma.png",
@@ -680,7 +741,8 @@
             "region": "Inazuma, Mondstadt",
             "version": 2.2,
             "splash": "Thoma_splash.png",
-            "quote": "Thoma_audio.mp3"
+            "quote": "I really did spend a lot recently, only 10 Mora left... Still, 10 Mora's better than no Mora!",
+            "audio": "Thoma_audio.ogg"
         },
         {
             "img": "Tighnari.png",
@@ -691,7 +753,8 @@
             "region": "Sumeru",
             "version": 3.0,
             "splash": "Tighnari_splash.png",
-            "quote": "Tighnari_audio.mp3"
+            "quote": "If you press a leaf between dry sheets of paper, you can make an attractive and handy bookmark.",
+            "audio": "Tighnari_audio.ogg"
         },
         {
             "img": "Aether.png",
@@ -702,7 +765,8 @@
             "region": "None",
             "version": 1.0,
             "splash": "Aether_splash.png",
-            "quote": "Aether_audio.mp3"
+            "quote": "Wind blade!",
+            "audio": "Aether_audio.ogg"
         },
         {
             "img": "Lumine.png",
@@ -713,7 +777,8 @@
             "region": "None",
             "version": 1.0,
             "splash": "Lumine_splash.png",
-            "quote": "Lumine_audio.mp3"
+            "quote": "This world is full of unsolved mysteries...",
+            "audio": "Lumine_audio.ogg"
         },
         {
             "img": "Venti.png",
@@ -724,7 +789,8 @@
             "region": "Mondstadt",
             "version": 1.0,
             "splash": "Venti_splash.png",
-            "quote": "Venti_audio.mp3"
+            "quote": "Hmm? You want to know about my Vision? Oh, go on then, take a look for yourself. I can make you a matching one if you like! Hehehe.",
+            "audio": "Venti_audio.ogg"
         },
         {
             "img": "Wanderer.png",
@@ -735,7 +801,8 @@
             "region": "Sumeru, Snezhnaya, Inazuma",
             "version": 3.3,
             "splash": "Wanderer_splash.png",
-            "quote": "Wanderer_audio.mp3"
+            "quote": "You think I've got a sharp tongue? I just tell it like it is. If someone can't handle it, maybe that's their problem.",
+            "audio": "Wanderer_audio.ogg"
         },
         {
             "img": "Wriothesley.png",
@@ -746,7 +813,8 @@
             "region": "Fontaine",
             "version": 4.1,
             "splash": "Wriothesley_splash.png",
-            "quote": "Wriothesley_audio.mp3"
+            "quote": "Word of advice: Don't break the law. Hmm, is there anything else? Oh, yeah... Seriously, don't break the law.",
+            "audio": "Wriothesley_audio.ogg"
         },
         {
             "img": "Xiangling.png",
@@ -757,7 +825,8 @@
             "region": "Liyue",
             "version": 1.0,
             "splash": "Xiangling_splash.png",
-            "quote": "Xiangling_audio.mp3"
+            "quote": "You've seen the dragon in Mondstadt? How big was it? What!? No way! Imagine how big a steak a dragon that huge would make!",
+            "audio": "Xiangling_audio.ogg"
         },
         {
             "img": "Xianyun.png",
@@ -768,7 +837,8 @@
             "region": "Liyue",
             "version": 4.4,
             "splash": "Xianyun_splash.png",
-            "quote": "Xianyun_audio.mp3"
+            "quote": "If you are presently unoccupied, perhaps we could stop awhile at one's abode for some repose and conversation?",
+            "audio": "Xianyun_audio.ogg"
         },
         {
             "img": "Xiao.png",
@@ -779,7 +849,8 @@
             "region": "Liyue",
             "version": 1.3,
             "splash": "Xiao_splash.png",
-            "quote": "Xiao_audio.mp3"
+            "quote": "Grrgh... Those memories... So dark...",
+            "audio": "Xiao_audio.ogg"
         },
         {
             "img": "Xingqiu.png",
@@ -790,7 +861,8 @@
             "region": "Liyue",
             "version": 1.0,
             "splash": "Xingqiu_splash.png",
-            "quote": "Xingqiu_audio.mp3"
+            "quote": "I never embark on a journey without a good book to accompany me.",
+            "audio": "Xingqiu_audio.ogg"
         },
         {
             "img": "Xinyan.png",
@@ -801,7 +873,8 @@
             "region": "Liyue",
             "version": 1.1,
             "splash": "Xinyan_splash.png",
-            "quote": "Xinyan_audio.mp3"
+            "quote": "I just came up with an awesome new riff, wanna hear it?",
+            "audio": "Xinyan_audio.ogg"
         },
         {
             "img": "Yae_Miko.png",
@@ -812,7 +885,8 @@
             "region": "Inazuma",
             "version": 2.5,
             "splash": "Yae_Miko_splash.png",
-            "quote": "Yae_Miko_audio.mp3"
+            "quote": "Peace and tranquility seems to be all the rage nowadays, but it gets dreadfully boring after a while...",
+            "audio": "Yae_Miko_audio.ogg"
         },
         {
             "img": "Yanfei.png",
@@ -823,7 +897,8 @@
             "region": "Liyue",
             "version": 1.5,
             "splash": "Yanfei_splash.png",
-            "quote": "Yanfei_audio.mp3"
+            "quote": "Sometimes the law is compatible with human nature, but sometimes the two conflict. Balancing the two is a discipline in its own right...",
+            "audio": "Yanfei_audio.ogg"
         },
         {
             "img": "Yaoyao.png",
@@ -834,7 +909,8 @@
             "region": "Liyue",
             "version": 3.4,
             "splash": "Yaoyao_splash.png",
-            "quote": "Yaoyao_audio.mp3"
+            "quote": "Why do so many people make such a big deal out of \"seeking the adepti\"? There's adepti everywhere! Isn't there?",
+            "audio": "Yaoyao_audio.ogg"
         },
         {
             "img": "Yelan.png",
@@ -845,7 +921,8 @@
             "region": "Liyue",
             "version": 2.7,
             "splash": "Yelan_splash.png",
-            "quote": "Yelan_audio.mp3"
+            "quote": "It's raining again? Oh, this isn't good... If the rain washes away the traces, it's gonna set us back a long way...",
+            "audio": "Yelan_audio.ogg"
         },
         {
             "img": "Yoimiya.png",
@@ -856,7 +933,8 @@
             "region": "Inazuma",
             "version": 2.0,
             "splash": "Yoimiya_splash.png",
-            "quote": "Yoimiya_audio.mp3"
+            "quote": "Fireworks are for now, but friends are forever.",
+            "audio": "Yoimiya_audio.ogg"
         },
         {
             "img": "Yun_Jin.png",
@@ -867,7 +945,8 @@
             "region": "Liyue",
             "version": 2.4,
             "splash": "Yun_Jin_splash.png",
-            "quote": "Yun_Jin_audio.mp3"
+            "quote": "My waistband has been feeling a little snug these last couple of days... Methinks I perchance have overindulged...",
+            "audio": "Yun_Jin_audio.ogg"
         },
         {
             "img": "Zhongli.png",
@@ -878,7 +957,8 @@
             "region": "Liyue",
             "version": 1.1,
             "splash": "Zhongli_splash.png",
-            "quote": "Zhongli_audio.mp3"
+            "quote": "Osmanthus wine tastes the same as I remember... But where are those who share the memory?",
+            "audio": "Zhongli_audio.ogg"
         }
     ]
 }

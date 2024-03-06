@@ -3,12 +3,15 @@
         <div class="container">
             <h3>Which character says:</h3>
         </div>
+        <InputCharacter v-if="isPlaying" :characters="characters"/>
     </div>
 </template>
 
 <script>
+import InputCharacter from '@/components/GuessComponents/InputCharacter.vue';
+
 export default {
-    components: {},
+    components: { InputCharacter },
     data() {
         return {
             characters: [],
