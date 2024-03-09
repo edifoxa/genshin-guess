@@ -114,4 +114,7 @@ export default {
     min-width: fit-content;
     max-width: 500px;
 }
+.countdown {
+  visibility: hidden;
+}
 </style>
