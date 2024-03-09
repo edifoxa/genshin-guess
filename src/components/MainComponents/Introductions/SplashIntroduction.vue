@@ -1,9 +1,7 @@
 <template>
     <div class="intro" v-if="dataLoaded">
         <h2 class="intro-text">Which character is it?</h2>
-        <SplashAdjuster :currentSplash="currentSplash"
-            :hints="hints"
-        />
+        <SplashAdjuster :currentSplash="currentSplash" :hints="hints" />
     </div>
     <div v-else class="intro">
         <h2 class="loading">Loading...</h2>
@@ -34,11 +32,11 @@ export default {
         loadData() {
             return new Promise((resolve) => {
                 setTimeout(() => {
-                    resolve();
-                }, 300);
-            });
-        },
-    },
+                    resolve()
+                }, 300)
+            })
+        }
+    }
 }
 </script>
 

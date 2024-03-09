@@ -1,15 +1,17 @@
 <template>
     <div class="home">
-        <div class="container">
+        <div class="container" v-if="isPlaying">
             <QuoteIntroduction
-            :currentQuote="currentQuote"
-            :currentAudio="currentAudio"
-        />  
+                :currentQuote="currentQuote"
+                :currentAudio="currentAudio"
+                :hints="hints"
+            />  
         </div>
         <InputCharacter v-if="isPlaying" @play="playQuote"
             :characters="characters"
         />
         <Guess v-if="start" @endGame="endGame"
+            @updateTries="updateTries"
             :selectedCharacterImg="selectedCharacterImg"
             :selectedCharacterName="selectedCharacterName"
             :quoteMode="quoteMode"
@@ -21,6 +23,7 @@
             :nextSplash="this.nextSplash"
             :currentAudio="currentAudio"
         />
+        <Countdown class="countdown"/>
     </div>
 </template>
 
@@ -29,9 +32,10 @@ import QuoteIntroduction from '@/components/MainComponents/Introductions/QuoteIn
 import InputCharacter from '@/components/GuessComponents/InputCharacter.vue'
 import Guess from '@/components/GuessComponents/QuoteSplashAnswers/Guess.vue'
 import Results from '@/components/ResultsComponents/Results.vue'
+import Countdown from '@/components/ResultsComponents/Countdown.vue'
 
 export default {
-    components: { QuoteIntroduction, InputCharacter, Guess, Results },
+    components: { QuoteIntroduction, InputCharacter, Guess, Results, Countdown },
     data() {
         return {
             characters: [],
@@ -45,21 +49,22 @@ export default {
             start: false,
             quoteMode: true,
             nextSplash: true,
-            tries: 0
+            tries: 0,
+            hints: 0
         }
     },
     mounted() {
-    // localStorage.clear();
+    // localStorage.clear()
     fetch("http://localhost:3000/characters")
       .then((res) => res.json())
       .then((data) => {
-        this.characters = data;
+        this.characters = data
         this.getDailyQuote()
       })
     },
     methods: {
         randQuote() {
-            let currentCharacter = this.characters[Math.floor(Math.random() * this.characters.length)];
+            let currentCharacter = this.characters[Math.floor(Math.random() * this.characters.length)]
             this.currentQuote = currentCharacter.quote
             this.currentAudio = currentCharacter.audio
             this.currentCharacterName = currentCharacter.name
@@ -86,7 +91,6 @@ export default {
         getDailyQuote() {
             // Check if the voiceline is stored in localStorage
             if ((localStorage.getItem("currentQuote") !== null) && (localStorage.getItem("currentAudio") !== null)) {
-                // console.log("currentQuote and storedAudio are not null");
                 const storedAudio = localStorage.getItem("currentAudio")
                 const storedQuote = localStorage.getItem("currentQuote")
                 const storedQuoteName = localStorage.getItem("currentQuoteName")
@@ -96,7 +100,6 @@ export default {
                 this.currentCharacterName = storedQuoteName
                 this.currentCharacterImg = storedQuoteImg
             } else {
-                console.log("storedQuote and storedAudio are null")
                 this.randQuote()
             }
         },
@@ -105,6 +108,9 @@ export default {
             this.selectedCharacterImg = selectedCharacter.img
             this.selectedCharacterName = selectedCharacter.name
             this.characters.splice(this.characters.indexOf(selectedCharacter), 1)
+        },
+        updateTries(tries) {
+            this.hints = tries
         },
         endGame(tries) {
             this.isPlaying = false
@@ -123,5 +129,8 @@ export default {
     min-width: min-content;
     width: 50%;
     max-width: 800px;
+}
+.countdown {
+  visibility: hidden;
 }
 </style>

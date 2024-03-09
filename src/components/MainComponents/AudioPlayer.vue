@@ -1,24 +1,34 @@
 <template>
     <div class="audio-player">
-        <button @click="toggleAudio">
-            <img v-if="!plays" src="@/assets/buttons/play-active.png" alt="Play" class="audio-button">
-            <img v-if="plays" src="@/assets/buttons/pause-active.png" alt="Pause" class="audio-button">
+        <img v-if="!showHint" src="@/assets/buttons/play-inactive.png" class="audio-button-inactive">
+        <button v-else @click="toggleAudio">
+            <img v-if="!plays && showHint" src="@/assets/buttons/play-active.png" alt="Play" class="audio-button">
+            <img v-else src="@/assets/buttons/pause-active.png" alt="Pause" class="audio-button">
         </button>
-        <h2 class="text desc">Listen to the quote</h2>
+        <h2 v-if="!showHint" class="text desc disabled">Listen to the quote</h2>
+        <h2 v-else class="text desc">Listen to the quote</h2>
     </div>
 </template>
 
 <script>
 export default {
-    props: ['currentAudio'],
+    props: ['currentAudio', 'hints'],
     data() {
         return {
-        plays: false,
-        audioElement: null,
+            plays: false,
+            audioElement: null,
+            showHint: false
         }
     },
     mounted() {
         this.setupAudioElement()
+    },
+    watch: {
+        hints: function() {
+            if (this.hints >= 3) {
+                this.showHint = true
+            }
+        }
     },
     methods: {
         toggleAudio() {
@@ -35,9 +45,9 @@ export default {
         setupAudioElement() {
             this.audioElement = new Audio(require(`@/assets/voicelines/${this.currentAudio}`))
             this.audioElement.addEventListener('ended', () => {
-                this.plays = false;
+                this.plays = false
             })
-        },
+        }
     }
 }
 </script>
@@ -51,7 +61,6 @@ export default {
     margin-top: 15px;
     margin-bottom: 15px;
 }
-
 button {
     background: none;
     border: none;
@@ -62,6 +71,7 @@ button {
     margin-left: 10px;
     display: inline-flex;
 }
+.audio-button-inactive,
 .audio-button {
     max-width: 60px;
     padding: 0;
@@ -76,5 +86,8 @@ button {
     font-style: italic;
     font-weight: lighter;
     color: #F9B61A;
+}
+.desc.disabled {
+    color: #949494;
 }
 </style>

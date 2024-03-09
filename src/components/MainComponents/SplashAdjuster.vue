@@ -1,8 +1,7 @@
 <template>
   <div>
     <div class="splash-container" :style="{ width: uncoverWidth }">
-      <img
-        class="splashart"
+      <img class="splashart"
         :src="require(`@/assets/splasharts/${currentSplash}`)"
       />
     </div>
@@ -14,30 +13,29 @@ export default {
   props: ['currentSplash', 'hints'],
   data() {
     return {
-      imagePercentage: 10, // Initial percentage to show
-      containerWidth: 500,
-    };
+      imagePercentage: 10,
+      containerWidth: 500
+    }
   },
   computed: {
     uncoverWidth() {
       return `${(this.imagePercentage / 100) * this.containerWidth}px`
-    },
+    }
   },
   watch: {
-        hints: function() {
-            this.uncover()
-        }
-    },
+    hints: function() {
+      this.uncover()
+    }
+  },
   methods: {
     uncover() {
       this.imagePercentage += 2
-
       if (this.imagePercentage > 100) {
         this.imagePercentage = 100
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>
 
 <style>
@@ -48,7 +46,6 @@ export default {
   border-radius: 10px;
   width: 50%;
 }
-
 .splashart {
   width: auto;
   height: 100%;

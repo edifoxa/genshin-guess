@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import DynamicAnswer from './DynamicAnswer.vue';
+import DynamicAnswer from './DynamicAnswer.vue'
 
 export default {
     components: { DynamicAnswer },

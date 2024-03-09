@@ -11,9 +11,8 @@
 </template>
 
 <script>
-import Labels from './Labels.vue';
-import Answers from './Answers.vue';
-
+import Labels from './Labels.vue'
+import Answers from './Answers.vue'
 export default {
     components: { Labels, Answers },
     props: [
@@ -27,7 +26,7 @@ export default {
         endGame(tries) {
             this.$emit('endGame', tries)
         }
-    },
+    }
 }
 </script>
 

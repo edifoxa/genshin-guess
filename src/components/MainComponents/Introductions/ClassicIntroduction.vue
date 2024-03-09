@@ -12,9 +12,9 @@ export default {
 
 <style scoped>
 .container {
-  padding: 1.5em 4em;
-  max-width: max-content;
-  width: fit-content;
-  margin-top: 20px;
+    padding: 1.5em 4em;
+    max-width: max-content;
+    width: fit-content;
+    margin-top: 20px;
 }
 </style>

@@ -10,25 +10,19 @@
       </div>
       <router-view/>
     </div>
-    <footer class="text">
-      Genshin Guess - 2024
-    </footer>
+    <footer class="text">Genshin Guess - 2024</footer>
   </div>
-
   <teleport to='.modals' v-if="showAboutModal">
     <About @close="toggleAboutModal"/>
   </teleport>
-
   <teleport to='.modals' v-if="showHowToPlayModal">
     <HowToPlay @close="toggleHowToPlayModal"/>
   </teleport>
-
 </template>
 
 <script>
-import About from './components/MainComponents/Modals/About.vue';
-import HowToPlay from './components/MainComponents/Modals/HowToPlay.vue';
-
+import About from './components/MainComponents/Modals/About.vue'
+import HowToPlay from './components/MainComponents/Modals/HowToPlay.vue'
 export default {
     components: { About, HowToPlay },
     data() {
@@ -39,10 +33,10 @@ export default {
     },
     methods: {
       toggleAboutModal() {
-        this.showAboutModal = !this.showAboutModal;
+        this.showAboutModal = !this.showAboutModal
       },
       toggleHowToPlayModal() {
-        this.showHowToPlayModal = !this.showHowToPlayModal;
+        this.showHowToPlayModal = !this.showHowToPlayModal
       }
     }
 }
@@ -54,17 +48,14 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
 }
-
 html, body {
   height: 100%;
   margin: 0;
 }
-
 .main {
   height: max-content;
   min-height: 90vh;
 }
-
 .bg {
   height: 100vh;
   background:
@@ -79,39 +70,32 @@ html, body {
   background-size:cover;
   overflow-x: hidden;
 }
-
 .logo img {
   margin-top: 20px;
   margin-bottom: 30px;
   transition: transform 0.3s ease;
 }
-
 .text {
   font-family: 'Georgia', 'Times New Roman', Times, serif;
   font-style: italic;
   font-weight: 400;
 }
-
 h2 {
   color: #F5E8AF;
   font-size: 1.5rem;
 }
-
 h3 {
   color: #B29E99;
 }
-
 a {
   all: unset;
   cursor: pointer;
 }
-
 footer {
   margin-top: 50px;
   margin-bottom: 10px;
   color: #7D796A;
 }
-
 .container {
   margin: 10px;
   width: 30%;
@@ -122,33 +106,27 @@ footer {
   text-decoration: none;
   padding: 0.7em 0.7em;
   }
-
 .home {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
-
 .upper-container {
   display: flex;
   align-items: flex-end;
   justify-content: center;
 }
-
 .info-buttons {
   max-width: 50px;
   transition: transform 0.3s ease;
   margin-bottom: 15px;
 }
-
 .logo img:hover {
   transform: scale(1.02);
-
 }
 .info-buttons:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
-
 </style>

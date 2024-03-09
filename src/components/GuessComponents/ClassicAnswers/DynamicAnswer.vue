@@ -11,7 +11,6 @@
         </div>
       </template>
     </div>
-  
 </template>
 
 <script>
@@ -36,8 +35,8 @@ export default {
   },
   methods: {
     getCurrentCharacter() {
-        const storedCharacter = localStorage.getItem("currentCharacter");
-        this.currentCharacter = JSON.parse(storedCharacter);
+        const storedCharacter = localStorage.getItem("currentCharacter")
+        this.currentCharacter = JSON.parse(storedCharacter)
         return this.currentCharacter = [
           this.currentCharacter.gender,
           this.currentCharacter.vision,
@@ -49,11 +48,10 @@ export default {
     compareCharacters() {
       if(this.currentCharacterImg == this.selectedCharacterImg) {
         this.$emit('endGame')
-        console.log("dupa")
       }
     },
     checkCorrect(currentCharacter, selectedCharacter, index) {
-      return currentCharacter[index] == selectedCharacter[index];
+      return currentCharacter[index] == selectedCharacter[index]
     },
     checkPartial(currentCharacter, selectedCharacter, index) {
       return (
@@ -66,38 +64,35 @@ export default {
       )
     },
     shouldRenderSquare(index) {
-      return index < this.renderedSquares;
+      return index < this.renderedSquares
     },
     getSquareStyle(index) {
       const isCorrect = this.checkCorrect(this.currentCharacter, this.selectedCharacter, index)
       const isPartial = this.checkPartial(this.currentCharacter, this.selectedCharacter, index)
       return {
         'background-color': isCorrect ? 'rgba(64, 192, 87, 0.5)' : isPartial ? 'rgba(250, 176, 5, 0.5)' : 'rgba(191, 69, 15, 0.5)'
-        // Add any other styles to apply individually
       }
     },
     renderSquaresWithDelay() {
       const delay = 200
       this.selectedCharacter.forEach((attribute, index) => {
         setTimeout(() => {
-          this.renderedSquares = index + 1;
+          this.renderedSquares = index + 1
         }, (index + 1) * delay)
       })
       this.compareCharacters()
-    },
+    }
   }
 }
 </script>
 
 <style>
-
 .squares-container {
   display: flex;
   flex-direction: row;
   width: 100%;
   padding: 5px;
 }
-
 .square {
   border: 3px solid #59403A;
   font-size: 1.2em;
@@ -108,7 +103,6 @@ export default {
   min-width: 83px;
   aspect-ratio: 1;
 }
-
 .square img {
   width: 100%;
   height: 100%;

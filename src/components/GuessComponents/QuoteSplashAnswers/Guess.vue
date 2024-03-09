@@ -2,7 +2,7 @@
     <div class="board-container">
         <Answers 
             @endGame="endGame"
-            @updateSplash="updateSplash"
+            @updateTries="updateTries"
             :selectedCharacterImg="selectedCharacterImg"
             :selectedCharacterName="selectedCharacterName"
             :quoteMode="quoteMode"
@@ -11,17 +11,17 @@
 </template>
 
 <script>
-import Answers from './Answers.vue';
+import Answers from './Answers.vue'
 export default {
     components: { Answers },
     props: ['selectedCharacterImg', 'selectedCharacterName', 'quoteMode'],
-    emits: ['endGame', 'updateSplash'],
+    emits: ['endGame', 'updateTries'],
     methods: {
         endGame(tries) {
             this.$emit('endGame', tries)
         },
-        updateSplash(tries) {
-            this.$emit('updateSplash', tries)
+        updateTries(tries) {
+            this.$emit('updateTries', tries)
         }
     }
 }

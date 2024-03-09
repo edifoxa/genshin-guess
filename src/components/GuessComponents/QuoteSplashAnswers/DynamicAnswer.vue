@@ -29,12 +29,12 @@ export default {
     },
     methods: {
         getQuoteCurrentCharacterName() {
-            const currentName = localStorage.getItem("currentQuoteName");
+            const currentName = localStorage.getItem("currentQuoteName")
             this.currentCharacterName = currentName
             return this.currentCharacterName
         },
         getSplashCurrentCharacterName() {
-            const currentName = localStorage.getItem("currentSplashName");
+            const currentName = localStorage.getItem("currentSplashName")
             this.currentCharacterName = currentName
             return this.currentCharacterName
         },
@@ -45,14 +45,13 @@ export default {
             }
         },
         compareCharacters() {
-            console.log(this.currentCharacterName, this.selectedCharacterName)
             if(this.currentCharacterName == this.selectedCharacterName) {
                 this.$emit('endGame')
                 
             }
         },
         checkCorrect(currentCharacterName, selectedCharacterName) {
-            return currentCharacterName == selectedCharacterName;
+            return currentCharacterName == selectedCharacterName
         }
     }
 }

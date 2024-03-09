@@ -1,5 +1,6 @@
 <template>
     <div class="container results">
+        <div ref="scrollTarget"></div>
         <h2 class="text yellow">Well done Traveler!</h2>
         <div class="correct-answer">
             <div class="square"><img :src="require(`@/assets/characters/${currentCharacterImg}`)" /></div>
@@ -25,7 +26,6 @@
         <div class="container splash" v-if="currentSplash">
             <img class="fullSplash" :src="require(`@/assets/splasharts/${currentSplash}`)">
         </div>
-        <div ref="scrollTarget"></div>
         <div class="next-mode">
             <h2 class="results-text">
                 Next mode:
@@ -41,19 +41,25 @@
             </div>
         </div>
     </div>
-    
 </template>
 
 <script>
 import ModeButton from '../MainComponents/ModeButton.vue'
 import AudioPlayer from '@/components/MainComponents/AudioPlayer.vue'
-
 export default {
-    props: ['currentCharacterImg', 'currentCharacterName', 'tries', 'nextClassic', 'nextQuote', 'nextSplash', 'currentAudio', 'currentSplash'],
+    props: [
+        'currentCharacterImg', 
+        'currentCharacterName', 
+        'tries', 
+        'nextClassic', 
+        'nextQuote', 
+        'nextSplash', 
+        'currentAudio', 
+        'currentSplash'
+    ],
     components: { ModeButton, AudioPlayer },
     mounted() {
         this.scrollToBottom()
-        console.log(this.currentSplash)
     },
     methods: {
         goClassic() {
@@ -67,11 +73,10 @@ export default {
         },
         scrollToBottom() {
             const scrollTarget = this.$refs.scrollTarget
-            // Scroll to the bottom of the element
             scrollTarget.scrollIntoView({
                 behavior: 'smooth',
-                block: 'end',
-            });
+                block: 'start'
+            })
         }
     }
 }
@@ -124,6 +129,10 @@ export default {
     min-width: 300px;
     margin: 10px 50px;
     cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.mode:hover {
+    transform: scale(1.02);
 }
 .container.splash {
     width: 90%;

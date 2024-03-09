@@ -19,7 +19,6 @@
 </template>
 
 <style scoped>
-
 .indicators {
     min-width: fit-content;
     width: 50%;

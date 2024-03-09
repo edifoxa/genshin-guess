@@ -1,7 +1,9 @@
 <template>
     <div class="background" @click.self="closeModal">
         <div class="modal container">
-            <h1 class="modal-title">ABOUT</h1>
+            <h1 class="modal-title">
+                ABOUT
+            </h1>
             <hr class="modal-hr">
             <p class="modal-text">
                 Try yourself and guess a character from Genshin Impact!
@@ -41,56 +43,49 @@ export default {
         }
     }
 }
-
 </script>
 
 <style scoped>
-    .background {
-        top: 0;
-        position: fixed;
-        background: rgba(0, 0, 0, 0.5);
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .modal {
-        padding: 20px;
-        border-radius: 10px;
-        width: 80%; 
-        max-width: 800px; 
-        z-index: 2;
-    }
-
-    .modal-title {
-        color: #f3db7d;
-    }
-
-    .modal-hr {
-        background-color: #B29E99;
-        border: none;
-        height: 1px;
-    }
-
-    .modal-text {
-        color: #f3e9c1;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-    }
-
-    .a-modal {
-        color: #F9B61A;
-        font-style: italic;
-    }
-    .a-modal:hover {
-        color: #e9c777;
-        font-style: italic;
-    }
-
-    .modal-text-cr {
-        color: #B29E99;
-        margin: 5px 0;
-        padding-top: 5px;
-    }
+.background {
+    top: 0;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal {
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%; 
+    max-width: 800px; 
+    z-index: 2;
+}
+.modal-title {
+    color: #f3db7d;
+}
+.modal-hr {
+    background-color: #B29E99;
+    border: none;
+    height: 1px;
+}
+.modal-text {
+    color: #f3e9c1;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.a-modal {
+    color: #F9B61A;
+    font-style: italic;
+}
+.a-modal:hover {
+    color: #e9c777;
+    font-style: italic;
+}
+.modal-text-cr {
+    color: #B29E99;
+    margin: 5px 0;
+    padding-top: 5px;
+}
 </style>

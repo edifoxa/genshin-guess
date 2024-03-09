@@ -11,11 +11,11 @@
 </template>
 
 <script>
-import DynamicAnswer from './DynamicAnswer.vue';
+import DynamicAnswer from './DynamicAnswer.vue'
 export default {
     components: { DynamicAnswer },
     props: ['currentCharacterName', 'selectedCharacterImg', 'selectedCharacterName', 'quoteMode'],
-    emits: ['endGame', 'updateSplash'],
+    emits: ['endGame', 'updateTries'],
     data() {
         return {
             answers: [],
@@ -42,13 +42,13 @@ export default {
             }
             this.answers.push(newAnswer)
             this.tries++
-            this.updateSplash()
+            this.updateTries()
         },
         endGame() {
             this.$emit('endGame', this.tries)
         },
-        updateSplash() {
-            this.$emit('updateSplash', this.tries)
+        updateTries() {
+            this.$emit('updateTries', this.tries)
         }
     }
 }

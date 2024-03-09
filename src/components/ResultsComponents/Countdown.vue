@@ -28,7 +28,7 @@ export default {
       this.remainingTime = tomorrow - now
 
       if (time == "00:00:00") {
-        this.$emit('end')
+        localStorage.clear()
       }
     }
   },
@@ -38,9 +38,9 @@ export default {
       const minutes = Math.floor((this.remainingTime % (1000 * 60 * 60)) / (1000 * 60))
       const seconds = Math.floor((this.remainingTime % (1000 * 60)) / 1000)
       return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
-    },
-  },
-};
+    }
+  }
+}
 </script>
 
 <style scoped>
@@ -48,7 +48,6 @@ export default {
   color: #F9B61A;
   font-size: x-large;
 }
-
 .countdown {
   text-align: center;
   margin: 15px;
@@ -57,7 +56,6 @@ export default {
   border-radius: 8px;
   padding: 12px;
 }
-
 p {
   margin: 5px;
 }
@@ -65,5 +63,4 @@ p {
   color: #f3e9c1;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
 </style>

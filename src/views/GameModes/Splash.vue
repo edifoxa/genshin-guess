@@ -1,7 +1,8 @@
 <template>
     <div class="home">
         <div class="container" v-if="isPlaying">
-            <SplashIntroduction :currentSplash="currentSplash"
+            <SplashIntroduction 
+                :currentSplash="currentSplash"
                 :hints="hints"
             />
         </div>
@@ -9,7 +10,7 @@
             :characters="characters"
         />
         <Guess v-if="start" @endGame="endGame"
-            @updateSplash="updateSplash"
+            @updateTries="updateTries"
             :selectedCharacterImg="selectedCharacterImg"
             :selectedCharacterName="selectedCharacterName"
         />
@@ -20,6 +21,7 @@
             :nextClassic="nextClassic"
             :currentSplash="currentSplash"
         />
+        <Countdown class="countdown"/>
     </div>
 </template>
 
@@ -28,9 +30,9 @@ import SplashIntroduction from '@/components/MainComponents/Introductions/Splash
 import InputCharacter from '@/components/GuessComponents/InputCharacter.vue'
 import Guess from '@/components/GuessComponents/QuoteSplashAnswers/Guess.vue'
 import Results from '@/components/ResultsComponents/Results.vue'
-
+import Countdown from '@/components/ResultsComponents/Countdown.vue'
 export default {
-    components: { SplashIntroduction, InputCharacter, Guess, Results },
+    components: { SplashIntroduction, InputCharacter, Guess, Results, Countdown },
     data() {
         return {
             characters: [],
@@ -47,17 +49,17 @@ export default {
         }
     },
     mounted() {
-    // localStorage.clear();
+    // localStorage.clear()
     fetch("http://localhost:3000/characters")
       .then((res) => res.json())
       .then((data) => {
-        this.characters = data;
+        this.characters = data
         this.getDailySplash()
       })
     },
     methods: {
         randSplash() {
-            let currentCharacter = this.characters[Math.floor(Math.random() * this.characters.length)];
+            let currentCharacter = this.characters[Math.floor(Math.random() * this.characters.length)]
             this.currentSplash = currentCharacter.splash
             this.currentCharacterName = currentCharacter.name
             this.currentCharacterImg = currentCharacter.img
@@ -79,7 +81,6 @@ export default {
         getDailySplash() {
             // Check if the voiceline is stored in localStorage
             if (localStorage.getItem("currentSplash") !== null) {
-                // console.log("currentSplash is not null");
                 const storedSplash = localStorage.getItem("currentSplash")
                 const storedSplashName = localStorage.getItem("currentSplashName")
                 const storedSplashImg = localStorage.getItem("currentSplashImg")
@@ -87,11 +88,10 @@ export default {
                 this.currentCharacterName = storedSplashName
                 this.currentCharacterImg = storedSplashImg
             } else {
-                console.log("currentSplash is null")
                 this.randSplash()
             }
         },
-        updateSplash(tries) {
+        updateTries(tries) {
             this.hints = tries
         },
         endGame(tries) {
