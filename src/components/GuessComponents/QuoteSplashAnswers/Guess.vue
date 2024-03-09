@@ -2,8 +2,10 @@
     <div class="board-container">
         <Answers 
             @endGame="endGame"
+            @updateSplash="updateSplash"
             :selectedCharacterImg="selectedCharacterImg"
             :selectedCharacterName="selectedCharacterName"
+            :quoteMode="quoteMode"
         />
     </div>
 </template>
@@ -12,11 +14,14 @@
 import Answers from './Answers.vue';
 export default {
     components: { Answers },
-    props: ['selectedCharacterImg', 'selectedCharacterName'],
-    emits: ['endGame'],
+    props: ['selectedCharacterImg', 'selectedCharacterName', 'quoteMode'],
+    emits: ['endGame', 'updateSplash'],
     methods: {
         endGame(tries) {
             this.$emit('endGame', tries)
+        },
+        updateSplash(tries) {
+            this.$emit('updateSplash', tries)
         }
     }
 }

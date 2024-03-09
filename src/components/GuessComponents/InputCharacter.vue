@@ -14,7 +14,7 @@
                 </span>
             </template>
         </v-select>
-        <button id="submitBtn" type="submit"><img src="@/assets/buttons/submit.png" alt="submit button"></button>
+        <div id="submitBtn"><img src="@/assets/buttons/submit.png"></div>
     </form>
 </template>
 
@@ -118,7 +118,6 @@ span img {
     height: fit-content;
     width: fit-content;
     background: transparent;
-    cursor: pointer;
 }
 
 </style>

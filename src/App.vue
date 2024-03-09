@@ -139,6 +139,7 @@ footer {
 .info-buttons {
   max-width: 50px;
   transition: transform 0.3s ease;
+  margin-bottom: 15px;
 }
 
 .logo img:hover {

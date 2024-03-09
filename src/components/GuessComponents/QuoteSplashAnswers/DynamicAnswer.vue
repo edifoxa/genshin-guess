@@ -11,7 +11,7 @@
 
 <script>
 export default {
-    props: ['selectedCharacterImg', 'selectedCharacterName'],
+    props: ['selectedCharacterImg', 'selectedCharacterName', 'quoteMode'],
     emits: ['endGame'],
     data() {
         return {
@@ -20,20 +20,28 @@ export default {
         }
     },
     mounted() {
-        this.getCurrentCharacterName()
+        if (this.quoteMode) {
+            this.getQuoteCurrentCharacterName()
+        } else {
+            this.getSplashCurrentCharacterName()
+        }
         this.compareCharacters()
     },
     methods: {
-        getCurrentCharacterName() {
+        getQuoteCurrentCharacterName() {
             const currentName = localStorage.getItem("currentQuoteName");
+            this.currentCharacterName = currentName
+            return this.currentCharacterName
+        },
+        getSplashCurrentCharacterName() {
+            const currentName = localStorage.getItem("currentSplashName");
             this.currentCharacterName = currentName
             return this.currentCharacterName
         },
         getSquareStyle() {
             const isCorrect = this.checkCorrect(this.currentCharacterName, this.selectedCharacterName)
             return {
-                backgroundColor: isCorrect ? 'rgba(64, 192, 87, 0.5)' : 'rgba(191, 69, 15, 0.5)',
-                // Add any other styles to apply individually
+                backgroundColor: isCorrect ? 'rgba(64, 192, 87, 0.5)' : 'rgba(191, 69, 15, 0.5)'
             }
         },
         compareCharacters() {

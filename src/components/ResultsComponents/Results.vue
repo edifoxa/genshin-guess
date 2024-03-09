@@ -22,6 +22,10 @@
             <AudioPlayer :currentAudio="currentAudio"
             />
         </div>
+        <div class="container splash" v-if="currentSplash">
+            <img class="fullSplash" :src="require(`@/assets/splasharts/${currentSplash}`)">
+        </div>
+        <div ref="scrollTarget"></div>
         <div class="next-mode">
             <h2 class="results-text">
                 Next mode:
@@ -37,7 +41,7 @@
             </div>
         </div>
     </div>
-    <div ref="scrollTarget"></div>
+    
 </template>
 
 <script>
@@ -45,10 +49,11 @@ import ModeButton from '../MainComponents/ModeButton.vue'
 import AudioPlayer from '@/components/MainComponents/AudioPlayer.vue'
 
 export default {
-    props: ['currentCharacterImg', 'currentCharacterName', 'tries', 'nextClassic', 'nextQuote', 'nextSplash', 'currentAudio'],
+    props: ['currentCharacterImg', 'currentCharacterName', 'tries', 'nextClassic', 'nextQuote', 'nextSplash', 'currentAudio', 'currentSplash'],
     components: { ModeButton, AudioPlayer },
     mounted() {
         this.scrollToBottom()
+        console.log(this.currentSplash)
     },
     methods: {
         goClassic() {
@@ -78,7 +83,8 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-width: fit-content;
+    min-width: 50% !important;
+    max-width: 500px;
 }
 .yellow {
     color: #FAB005;
@@ -115,9 +121,15 @@ export default {
     flex-direction: column;
 }
 .mode {
-    min-width: 450px;
+    min-width: 300px;
     margin: 10px 50px;
     cursor: pointer;
 }
-
+.container.splash {
+    width: 90%;
+    border-width: 1px;
+}
+.fullSplash {
+    max-width: 90%;
+}
 </style>

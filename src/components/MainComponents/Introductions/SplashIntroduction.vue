@@ -1,8 +1,9 @@
 <template>
-    <div v-if="dataLoaded">
-        <h2 class="intro-text">Which character says:</h2>
-        <h2 class="quote">"{{ currentQuote }}"</h2>
-        <AudioPlayer :currentAudio="currentAudio"/>
+    <div class="intro" v-if="dataLoaded">
+        <h2 class="intro-text">Which character is it?</h2>
+        <SplashAdjuster :currentSplash="currentSplash"
+            :hints="hints"
+        />
     </div>
     <div v-else class="intro">
         <h2 class="loading">Loading...</h2>
@@ -10,31 +11,31 @@
 </template>
 
 <script>
-import InputCharacter from '@/components/GuessComponents/InputCharacter.vue';
-import AudioPlayer from '../AudioPlayer.vue';
+import InputCharacter from '@/components/GuessComponents/InputCharacter.vue'
+import SplashAdjuster from '@/components/MainComponents/SplashAdjuster.vue'
 export default {
-    components: { InputCharacter, AudioPlayer },
-    props: ['currentQuote', 'currentAudio'],
+    components: { InputCharacter, SplashAdjuster },
+    props: ['currentSplash', 'hints'],
     data() {
         return {
-            dataLoaded: false,
+            dataLoaded: false
         }
     },
     beforeMount() {
         this.loadData()
             .then(() => {
-                this.dataLoaded = true;
+                this.dataLoaded = true
             })
             .catch((error) => {
-                console.error('Error loading data:', error);
-            });
+                console.error('Error loading data:', error)
+            })
     },
     methods: {
         loadData() {
             return new Promise((resolve) => {
                 setTimeout(() => {
                     resolve();
-                }, 500);
+                }, 300);
             });
         },
     },
@@ -42,6 +43,11 @@ export default {
 </script>
 
 <style scoped>
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .intro-text {
     color: #949494;
     font-size: 20px;

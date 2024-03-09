@@ -5,6 +5,7 @@
             :selectedCharacterImg="answer.parameters.selectedCharacterImg"
             :selectedCharacterName="answer.parameters.selectedCharacterName"
             :currentCharacterName="currentCharacterName"
+            :quoteMode="quoteMode"
         />
     </div>
 </template>
@@ -13,8 +14,8 @@
 import DynamicAnswer from './DynamicAnswer.vue';
 export default {
     components: { DynamicAnswer },
-    props: ['currentCharacterName', 'selectedCharacterImg', 'selectedCharacterName'],
-    emits: ['endGame'],
+    props: ['currentCharacterName', 'selectedCharacterImg', 'selectedCharacterName', 'quoteMode'],
+    emits: ['endGame', 'updateSplash'],
     data() {
         return {
             answers: [],
@@ -41,9 +42,13 @@ export default {
             }
             this.answers.push(newAnswer)
             this.tries++
+            this.updateSplash()
         },
         endGame() {
             this.$emit('endGame', this.tries)
+        },
+        updateSplash() {
+            this.$emit('updateSplash', this.tries)
         }
     }
 }

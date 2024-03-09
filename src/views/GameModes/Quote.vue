@@ -6,10 +6,13 @@
             :currentAudio="currentAudio"
         />  
         </div>
-        <InputCharacter v-if="isPlaying" :characters="characters" @play="playQuote"/>
+        <InputCharacter v-if="isPlaying" @play="playQuote"
+            :characters="characters"
+        />
         <Guess v-if="start" @endGame="endGame"
             :selectedCharacterImg="selectedCharacterImg"
             :selectedCharacterName="selectedCharacterName"
+            :quoteMode="quoteMode"
         />
         <Results v-if="!(isPlaying)"
             :currentCharacterImg="this.currentCharacterImg"
@@ -19,7 +22,6 @@
             :currentAudio="currentAudio"
         />
     </div>
-    <div ref="scrollTarget"></div>
 </template>
 
 <script>
@@ -41,6 +43,7 @@ export default {
             selectedCharacterName: "",
             isPlaying: true,
             start: false,
+            quoteMode: true,
             nextSplash: true,
             tries: 0
         }
@@ -53,7 +56,6 @@ export default {
         this.characters = data;
         this.getDailyQuote()
       })
-      console.log(this.currentCharacterImg, this.currentCharacterName)
     },
     methods: {
         randQuote() {
