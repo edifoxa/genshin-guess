@@ -11,6 +11,11 @@
         </div>
       </template>
     </div>
+    <div class="squares-container">
+      <div v-if="older" class="square" :style="'background-color: rgba(191, 69, 15, 0.5)'">⬆</div>
+      <div v-if="newer" class="square" :style="'background-color: rgba(191, 69, 15, 0.5)'">⬇</div>
+      <div v-if="ok" class="square" :style="'background-color: rgba(64, 192, 87, 0.5)'">OK</div>
+    </div>
 </template>
 
 <script>
@@ -24,6 +29,9 @@ export default {
   data() {
     return {
       green: false,
+      older: false,
+      newer: false,
+      ok: false,
       renderedSquares: 0,
       currentCharacter: "",
       end: false
@@ -45,9 +53,17 @@ export default {
           this.currentCharacter.version
         ]
     },
-    compareCharacters() {
-      if(this.currentCharacterImg == this.selectedCharacterImg) {
-        this.$emit('endGame')
+    shouldRenderSquare(index) {
+      return index < this.renderedSquares
+    },
+    getSquareStyle(index) {
+      this.checkNewer(this.currentCharacter, this.selectedCharacter, index)
+      this.checkOlder(this.currentCharacter, this.selectedCharacter, index)
+      this.checkOkVersion(this.currentCharacter, this.selectedCharacter, index)
+      const isCorrect = this.checkCorrect(this.currentCharacter, this.selectedCharacter, index)
+      const isPartial = this.checkPartial(this.currentCharacter, this.selectedCharacter, index)
+      return {
+        'background-color': isCorrect ? 'rgba(64, 192, 87, 0.5)' : isPartial ? 'rgba(250, 176, 5, 0.5)' : 'rgba(191, 69, 15, 0.5)',
       }
     },
     checkCorrect(currentCharacter, selectedCharacter, index) {
@@ -63,14 +79,31 @@ export default {
           selectedCharacter[index].includes(currentCharacter[index]))
       )
     },
-    shouldRenderSquare(index) {
-      return index < this.renderedSquares
+    checkNewer(currentCharacter, selectedCharacter, index) {
+      if (
+        typeof currentCharacter[index] === 'number' &&
+        typeof selectedCharacter[index] === 'number' &&
+        currentCharacter[index] < selectedCharacter[index]
+      ) {
+        this.newer = true
+      }
     },
-    getSquareStyle(index) {
-      const isCorrect = this.checkCorrect(this.currentCharacter, this.selectedCharacter, index)
-      const isPartial = this.checkPartial(this.currentCharacter, this.selectedCharacter, index)
-      return {
-        'background-color': isCorrect ? 'rgba(64, 192, 87, 0.5)' : isPartial ? 'rgba(250, 176, 5, 0.5)' : 'rgba(191, 69, 15, 0.5)'
+    checkOlder(currentCharacter, selectedCharacter, index) {
+      if (
+        typeof currentCharacter[index] === 'number' &&
+        typeof selectedCharacter[index] === 'number' &&
+        currentCharacter[index] > selectedCharacter[index]
+      ) {
+        this.older = true
+      }
+    },
+    checkOkVersion (currentCharacter, selectedCharacter, index) {
+      if (
+        typeof currentCharacter[index] === 'number' &&
+        typeof selectedCharacter[index] === 'number' &&
+        currentCharacter[index] == selectedCharacter[index]
+      ) {
+        this.ok = true
       }
     },
     renderSquaresWithDelay() {
@@ -81,6 +114,11 @@ export default {
         }, (index + 1) * delay)
       })
       this.compareCharacters()
+    },
+    compareCharacters() {
+      if(this.currentCharacterImg == this.selectedCharacterImg) {
+        this.$emit('endGame')
+      }
     }
   }
 }

@@ -42,4 +42,10 @@ export default {
 .container:hover {
   transform: scale(1.1);
 }
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 </style>

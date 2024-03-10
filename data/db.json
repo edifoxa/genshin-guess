@@ -46,7 +46,7 @@
             "version": 1.0,
             "splash": "Amber_splash.png",
             "quote": "Look, there's a pigeon over there! *giggle* I wish I could fly alongside them.",
-            "audio": "Amber_audio.mp3"
+            "audio": "Amber_audio.ogg"
         },
         {
             "img": "Arataki_Itto.png",
@@ -160,9 +160,9 @@
             "img": "Collei.png",
             "name": "Collei", 
             "gender": "Female",
-            "vision": "Cryo", 
-            "weapon": "Claymore",
-            "region": "Liyue",
+            "vision": "Dendro", 
+            "weapon": "Bow",
+            "region": "Sumeru",
             "version": 3.0,
             "splash": "Collei_splash.png",
             "quote": "It's quite normal to be out until midday on the longer patrol routes. I brought a few extra Pita Pockets — would you like one?",

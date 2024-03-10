@@ -31,6 +31,11 @@ import InputCharacter from '@/components/GuessComponents/InputCharacter.vue'
 import Guess from '@/components/GuessComponents/QuoteSplashAnswers/Guess.vue'
 import Results from '@/components/ResultsComponents/Results.vue'
 import Countdown from '@/components/ResultsComponents/Countdown.vue'
+
+//firebase imports
+import { db } from '@/firebase/config'
+import { collection, getDocs } from 'firebase/firestore'
+
 export default {
     components: { SplashIntroduction, InputCharacter, Guess, Results, Countdown },
     data() {
@@ -49,13 +54,20 @@ export default {
         }
     },
     mounted() {
-    // localStorage.clear()
-    fetch("http://localhost:3000/characters")
-      .then((res) => res.json())
-      .then((data) => {
-        this.characters = data
-        this.getDailySplash()
-      })
+        // localStorage.clear()
+        const data = collection(db, 'characters')
+        getDocs(data)
+            .then(snapshot => {
+                let docs = []
+                snapshot.docs.forEach(doc => {
+                    docs.push({ ...doc.data(), id: doc.id })
+                })
+                this.characters = docs;
+                this.getDailySplash()
+            })
+        .catch(error => {
+            console.error('Error fetching data:', error)
+        })
     },
     methods: {
         randSplash() {

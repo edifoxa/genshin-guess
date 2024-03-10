@@ -27,6 +27,11 @@ import Countdown from "@/components/ResultsComponents/Countdown.vue"
 import Guess from "@/components/GuessComponents/ClassicAnswers/Guess.vue"
 import ColorIndicators from "@/components/MainComponents/ColorIndicators.vue"
 import Results from "@/components/ResultsComponents/Results.vue"
+
+//firebase imports
+import { db } from '@/firebase/config'
+import { collection, getDocs } from 'firebase/firestore'
+
 export default {
   components: { ClassicIntroduction, InputCharacter, Countdown, Guess, ColorIndicators, Results },
   data() {
@@ -38,6 +43,7 @@ export default {
         "Weapon",
         "Region(s)",
         "Version",
+        "Older/Newer?"
       ],
       characters: [],
       currentCharacter: "",
@@ -52,12 +58,20 @@ export default {
     }
   },
   mounted() {
-    fetch("http://localhost:3000/characters")
-      .then((res) => res.json())
-      .then((data) => {
-        this.characters = data
-        this.getDailyCharacter()
+    // localStorage.clear()
+    const data = collection(db, 'characters');
+    getDocs(data)
+      .then(snapshot => {
+        let docs = [];
+        snapshot.docs.forEach(doc => {
+          docs.push({ ...doc.data(), id: doc.id });
+        });
+      this.characters = docs;
+      this.getDailyCharacter();
       })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+    })
   },
   methods: {
     randCharacter() {

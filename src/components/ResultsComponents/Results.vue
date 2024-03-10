@@ -20,7 +20,7 @@
             </h2>
         </div>
         <div v-if="currentAudio">
-            <AudioPlayer :currentAudio="currentAudio"
+            <AudioPlayer :currentAudio="currentAudio" :hints="hints"
             />
         </div>
         <div class="container splash" v-if="currentSplash">
@@ -47,6 +47,11 @@
 import ModeButton from '../MainComponents/ModeButton.vue'
 import AudioPlayer from '@/components/MainComponents/AudioPlayer.vue'
 export default {
+    data() {
+        return {
+            hints: 5
+        }
+    },
     props: [
         'currentCharacterImg', 
         'currentCharacterName', 
@@ -63,13 +68,13 @@ export default {
     },
     methods: {
         goClassic() {
-        this.$router.push({ name: 'Classic' })
+            this.$router.push({ name: 'Classic' })
         },
         goQuote() {
-        this.$router.push({ name: 'Quote' })
+            this.$router.push({ name: 'Quote' })
         },
         goSplash() {
-        this.$router.push({ name: 'Splash' })
+            this.$router.push({ name: 'Splash' })
         },
         scrollToBottom() {
             const scrollTarget = this.$refs.scrollTarget
@@ -88,7 +93,7 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-width: 50% !important;
+    min-width: 300px !important;
     max-width: 500px;
 }
 .yellow {
@@ -126,7 +131,7 @@ export default {
     flex-direction: column;
 }
 .mode {
-    min-width: 300px;
+    min-width: 250px ;
     margin: 10px 50px;
     cursor: pointer;
     transition: transform 0.3s ease;

@@ -21,6 +21,9 @@ export default {
         }
     },
     mounted() {
+        if (this.hints >= 3) {
+            this.showHint = true
+        }
         this.setupAudioElement()
     },
     watch: {

@@ -73,7 +73,11 @@ html, body {
 .logo img {
   margin-top: 20px;
   margin-bottom: 30px;
+  width: 95%;
   transition: transform 0.3s ease;
+}
+.logo img:hover {
+  transform: scale(1.02);
 }
 .text {
   font-family: 'Georgia', 'Times New Roman', Times, serif;
@@ -98,6 +102,7 @@ footer {
 }
 .container {
   margin: 10px;
+  min-width: 200px;
   width: 30%;
   height: auto;
   background-color: #0D0F26;
@@ -118,12 +123,12 @@ footer {
   justify-content: center;
 }
 .info-buttons {
+  width: 10%;
   max-width: 50px;
   transition: transform 0.3s ease;
+  margin-left: 10px;
+  margin-right: 10px;
   margin-bottom: 15px;
-}
-.logo img:hover {
-  transform: scale(1.02);
 }
 .info-buttons:hover {
   transform: scale(1.1);
