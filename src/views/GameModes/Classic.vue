@@ -58,19 +58,18 @@ export default {
     }
   },
   mounted() {
-    // localStorage.clear()
-    const data = collection(db, 'characters');
+    const data = collection(db, 'characters')
     getDocs(data)
       .then(snapshot => {
-        let docs = [];
+        let docs = []
         snapshot.docs.forEach(doc => {
-          docs.push({ ...doc.data(), id: doc.id });
-        });
-      this.characters = docs;
-      this.getDailyCharacter();
+          docs.push({ ...doc.data(), id: doc.id })
+        })
+      this.characters = docs
+      this.getDailyCharacter()
       })
     .catch(error => {
-      console.error('Error fetching data:', error);
+      console.error('Error fetching data:', error)
     })
   },
   methods: {
@@ -113,7 +112,7 @@ export default {
 </script>
 
 <style scoped>
-.countdown {
-  visibility: hidden;
-}
+  .countdown {
+    visibility: hidden;
+  }
 </style>

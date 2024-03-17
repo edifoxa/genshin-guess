@@ -5,7 +5,7 @@
             <img v-if="!plays && showHint" src="@/assets/buttons/play-active.png" alt="Play" class="audio-button">
             <img v-else src="@/assets/buttons/pause-active.png" alt="Pause" class="audio-button">
         </button>
-        <h2 v-if="!showHint" class="text desc disabled">Listen to the quote</h2>
+        <h2 v-if="!showHint" class="text desc disabled">Unlock audio hint in {{ remains }} tries</h2>
         <h2 v-else class="text desc">Listen to the quote</h2>
     </div>
 </template>
@@ -17,7 +17,8 @@ export default {
         return {
             plays: false,
             audioElement: null,
-            showHint: false
+            showHint: false,
+            remains: 3
         }
     },
     mounted() {
@@ -31,6 +32,7 @@ export default {
             if (this.hints >= 3) {
                 this.showHint = true
             }
+            this.remains--
         }
     },
     methods: {

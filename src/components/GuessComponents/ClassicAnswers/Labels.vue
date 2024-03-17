@@ -22,7 +22,7 @@ export default {
 .labels {
     width: 100%;
     padding: 10px;
-    min-width: 79px;
+    min-width: 90px;
 }
 p {
     color: wheat;

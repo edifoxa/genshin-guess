@@ -83,6 +83,9 @@ export default {
     z-index: 0;
 }
 
+.new-styles .vs-dropdown-option:hover {
+    background-color: #0D0F26 !important;
+}
 span {
     display: flex;
     align-items: center;
