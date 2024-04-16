@@ -6,13 +6,16 @@
             </h1>
             <hr class="modal-hr">
             <p class="modal-text">
-                Try yourself and guess a character from Genshin Impact!
+                Guess a character from Genshin Impact Version 4.5!
             </p>
             <p class="modal-text">
                 Genshin Guess has been created thanks to the <a href="https://loldle.net/" class="a-modal">Loldle.net</a> 
                 - it was a great inspiration for me.
                 <br>
                 If you like League of Legends, please check it out &#128522;
+            </p>
+            <p class="modal-text">
+                If you found a bug or have any suggestion, feel free to contact me via mail: <a href="mailto:genshin-guess@gmail.com" class="a-modal">genshin-guess@gmail.com</a>
             </p>
             <p class="modal-text">
                 Assets used in this game are owned by HoYoverse and their usage complies with HoYoverse's <a href="https://www.hoyolab.com/article/143107" class="a-modal">intellectual property guidelines</a>.
